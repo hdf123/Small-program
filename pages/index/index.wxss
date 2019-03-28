@@ -1,6 +1,5 @@
 /**index.wxss**/
 page{
-  /* background-color:lime; */
   background-color:#F5F5F5;
 }
 .bgs_box{
@@ -31,7 +30,7 @@ page{
   width:260rpx;
   height:140rpx;
   margin-left:20rpx;
-  fontFamily:"PingFang-SC-Bold";
+  font-family: PingFang-SC-Bold;
   font-weight:bold;
   line-height:140rpx;
 }
