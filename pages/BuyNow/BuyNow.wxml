@@ -1,0 +1,33 @@
+<!--pages/BuyNow/BuyNow.wxml-->
+<view class='card'>
+  <image src="../../image/cdae6fa0cd030eb253a78f80587dc23.png"></image>
+</view>
+
+<view class="details_box">
+  <view class="_title">
+    <text>返金卡是什么</text>
+  </view>
+  <view class="_content">
+      持返金卡购房可享受中原楼市网所有合作项目房款抵用券3000元的优惠，同时可参加中原楼市网定期举办的针对VIP客户的所有活动。
+  </view>
+
+  <view class="phone">
+    <image src="../../image/328fb561f2984c1708eabeef785d295.png"></image>
+  </view>
+  <text class="_content">温馨提醒：3000元以上优惠，超出部分另需支付20%作为佣金。</text>
+
+  <view class="_title instructions">
+    <text>购买须知</text>
+  </view>
+  <view class="list">
+    <view>1、本卡为购房优惠卡，使用本卡前请与中原楼市网取得联系，确认优惠；</view>
+    <view>2、支付300元购买本卡，即可获得总房款3000+的额外优惠；</view>
+    <view>3、本卡权益仅限持卡本人，更名，转让皆为无效，仅限郑州地区使用；</view>
+    <view>4、购房服务电话：0371-552 55555；</view>
+    <view>5、本卡最终解释权归中原楼市网所有；</view>
+  </view>
+</view>
+
+<view class="buy">
+  立即购买（￥300元）
+</view>

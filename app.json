@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/BuyNow/BuyNow",
+    "pages/buy/buy",
+    "pages/instructions/instructions",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "个人中心",
+    "navigationBarTextStyle":"black"
+  }
+}

@@ -1,0 +1,4 @@
+<view class="buys" wx:for="{{xlist}}">
+  <text>{{item.types}}</text>
+  <text>{{item.information}}</text>
+</view>

@@ -1,0 +1,12 @@
+<view class="details_box">
+  <view class="_title">
+    <text>购买须知</text>
+  </view>
+  <view class="list">
+    <view>1、本卡为购房优惠卡，使用本卡前请与中原楼市网取得联系，确认优惠；</view>
+    <view>2、支付300元购买本卡，即可获得总房款3000+的额外优惠；</view>
+    <view>3、本卡权益仅限持卡本人，更名，转让皆为无效，仅限郑州地区使用；</view>
+    <view>4、购房服务电话：0371-552 55555；</view>
+    <view>5、本卡最终解释权归中原楼市网所有；</view>
+  </view>
+</view>

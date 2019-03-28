@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="bgs_box">
+  <view class="ban_content">
+    <image src='' mode='widthFix' bindtap="bik"></image>
+    <text class="dhs">{{kname}}</text>
+    <image src='../../image/5f2d6df75c01e35a45410552653ac71.png' mode='widthFix'></image>
+  </view>
+</view>
+
+<view class='tab-box'>
+  <navigator url='../BuyNow/BuyNow'>
+    <text>立即购卡</text>
+    <image src='../../image/rebate.png' mode='widthFix'></image>
+  </navigator>
+  <view class="segmentation"></view>
+  <navigator url='../buy/buy'>
+    <text>购卡信息</text>
+    <image src='../../image/buy.png' mode='widthFix'></image>
+  </navigator>
+</view>
+
+<view class="share">
+  <image src="../../image/banner@2x.png"></image>
+</view>
+
+<view class="mlist" wx:for="{{mlist}}" bindtap='back' data-url='{{item.url}}'>
+  <text>{{item.txt}}</text>
+  <image src="../../image/Back.png"></image>
+</view>

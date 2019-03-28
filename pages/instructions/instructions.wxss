@@ -1,0 +1,19 @@
+/* pages/instructions/instructions.wxss */
+.details_box{
+  margin:0 auto;
+  padding:0 10%;
+  border-top:1rpx solid #999999;
+}
+._title{
+  font-family:"PingFang-SC-Bold";
+  font-weight:600;
+  margin:40rpx 0 30rpx 0;
+}
+.list{
+  font-size:24rpx;
+  color:#999999;
+  font-family: "PingFang-SC-Medium";
+}
+.list view{
+  margin-bottom:10rpx;
+}
