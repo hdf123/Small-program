@@ -23,7 +23,7 @@ page{
   width:140rpx;
   height:140rpx;
   border-radius:50%;
-  background:rgb(212, 133, 133);
+  background:rgba(236, 231, 231, 0.5);
   margin-left:30rpx;
 }
 .ban_content text{
