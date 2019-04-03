@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    _title: ""
+    
   },
 
   /**
@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: this.data._title
+      title: ''
     })
   },
 

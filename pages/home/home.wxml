@@ -1,0 +1,47 @@
+<view class="banner">
+  <image src='' mode='widthFix' />
+</view>
+<view class="mun">
+  <text>已有</text>
+  <view>
+    <view>1</view>
+    <view>8</view>
+    <view>5</view>
+    <view>3</view>
+    <view>9</view>
+  </view>
+  <text>人找到优惠</text>
+</view>
+<view class="home_box">
+  <view class="information">
+    <view>
+      <text>姓名</text>
+      <input placeholder-class="prompt" placeholder='请输入真实姓名' />
+    </view>
+    <view>
+      <text>手机号</text>
+      <input placeholder-class="prompt" placeholder='请输入手机号' />
+    </view>
+    <view>
+      <text>楼盘名</text>
+      <input placeholder-class="prompt" placeholder='请输入意向楼盘' />
+    </view>
+  </view>
+  <text class="prompt">*购买成功后，中原楼市客服将在24小时内联系您</text>
+  <view class="reports">
+    <image src='../../image/information@2x.png' mode='widthFix' />
+    <text>李先生已通过返金卡成功找到优惠 1分钟前</text>
+  </view>
+  <button class="btn">我要优惠</button>
+  <view class="terms">
+    <image src='../../image/choose_s.png' mode='widthFix' />
+    <view>
+      <text>购买即默认同意</text>
+      <text>《购卡须知》</text>
+    </view>
+  </view>
+</view>
+<view class="segmentation"></view>
+<view class="home_box">
+  <image src='../../image/328fb561f2984c1708eabeef785d295.png' class="images" mode='widthFix' />
+</view>

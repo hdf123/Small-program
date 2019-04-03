@@ -1,24 +1,18 @@
-// pages/buy/buy.js
+// pages/building/building.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    xlist:[
-      { types: '购买项目', information:'返金卡'},
-      { types: '购买时间', information:'2019.03.22'},
-      { types: '购买金额', information:'￥300'},
-    ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title:"购卡信息"
-    })
+
   },
 
   /**

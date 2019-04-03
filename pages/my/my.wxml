@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="bgs_box">
   <view class="ban_content">
-    <image src='' mode='widthFix' bindtap="bik"></image>
+    <image src='' mode='widthFix'></image>
     <text class="dhs">{{kname}}</text>
     <image src='../../image/5f2d6df75c01e35a45410552653ac71.png' mode='widthFix'></image>
   </view>
