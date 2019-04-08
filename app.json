@@ -8,9 +8,9 @@
     "pages/instructions/instructions"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "中原楼市",
+    "navigationBarTitleText": "中原楼市返金卡",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

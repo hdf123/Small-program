@@ -12,36 +12,204 @@
   </view>
   <text>人找到优惠</text>
 </view>
+
+
+<!-- 个人信息 -->
 <view class="home_box">
-  <view class="information">
-    <view>
-      <text>姓名</text>
-      <input placeholder-class="prompt" placeholder='请输入真实姓名' />
+  <form bindsubmit="formSubmit">
+    <view class="information">
+      <view>
+        <text>姓名</text>
+        <input placeholder-class="prompt" name="name" placeholder='请输入真实姓名' />
+      </view>
+      <view>
+        <text>手机号</text>
+        <input placeholder-class="prompt" name="phone" placeholder='请输入手机号' />
+      </view>
+      <view>
+        <text>楼盘名</text>
+        <input placeholder-class="prompt" name="address" placeholder='请输入意向楼盘' />
+      </view>
     </view>
-    <view>
-      <text>手机号</text>
-      <input placeholder-class="prompt" placeholder='请输入手机号' />
+    <text class="prompt">*购买成功后，中原楼市客服将在24小时内联系您</text>
+    <view class="reports">
+      <image src='../../image/information@2x.png' mode='widthFix' />
+      <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+          <block wx:for="{{msgList}}" wx:key="{{ids}}">
+            <swiper-item>
+              <view class="swiper_item">{{item.title}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
     </view>
-    <view>
-      <text>楼盘名</text>
-      <input placeholder-class="prompt" placeholder='请输入意向楼盘' />
+    <button class="btn" formType="submit">我要优惠</button>
+    <view class="terms" bindtap='terms'>
+      <image src='{{img}}' class="terms_show" mode='widthFix' />
+      <view>
+        <text>购买即默认同意</text>
+        <text catchtap='ttt'>《购卡须知》</text>
+      </view>
     </view>
-  </view>
-  <text class="prompt">*购买成功后，中原楼市客服将在24小时内联系您</text>
-  <view class="reports">
-    <image src='../../image/information@2x.png' mode='widthFix' />
-    <text>李先生已通过返金卡成功找到优惠 1分钟前</text>
-  </view>
-  <button class="btn">我要优惠</button>
-  <view class="terms">
-    <image src='../../image/choose_s.png' mode='widthFix' />
-    <view>
-      <text>购买即默认同意</text>
-      <text>《购卡须知》</text>
+  </form>
+</view>
+
+
+<!-- 办理流程 -->
+<view class="segmentation">
+  <view class="home_box">
+    <image src='../../image/328fb561f2984c1708eabeef785d295.png' class="images" mode='widthFix' />
+    <view class="purchase_title">
+      <text>专业顾问一对一服务 购卡享额外优惠</text>
+      <view class="rotating">
+        <view class="line"></view>
+        <view></view>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="process_box">
+      <view>
+        <image src='' mode='widthFix' />
+        <view>
+          <text>1.联系客服办理返金卡</text>
+        </view>
+      </view>
+      <view>
+        <image src='' mode='widthFix' />
+        <view>
+          <text>2.预约看房</text>
+        </view>
+      </view>
+      <view>
+        <image src='' mode='widthFix' />
+        <view>
+          <text>3.确定房源</text>
+        </view>
+      </view>
+    </view>
+    <view class="process_box">
+      <view>
+        <image src='' mode='widthFix' />
+        <view>
+          <text>4.提供购房信息</text>
+        </view>
+      </view>
+      <view>
+        <image src='' mode='widthFix' />
+        <view>
+          <text>5.获取额外优惠</text>
+        </view>
+      </view>
+      <view>
+        <image src='' mode='widthFix' />
+        <view>
+          <text>6.办理购房合同</text>
+        </view>
+      </view>
     </view>
   </view>
 </view>
-<view class="segmentation"></view>
+
+
+<!-- 优惠表单 -->
 <view class="home_box">
-  <image src='../../image/328fb561f2984c1708eabeef785d295.png' class="images" mode='widthFix' />
+  <view class="purchase_title">
+    <text>TA们已获得优惠</text>
+    <view class="rotating">
+      <view class="line"></view>
+      <view></view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">姓名</view>
+      <view class="th">手机号</view>
+      <view class="th ">优惠</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="{{code}}">
+      <view class="tr bor" wx:if="{{index==0}}">
+        <view class="reward">
+          <image src='../../image/gold medal@2x.png' mode='widthFix' />
+          <text>{{item.code}}</text>
+        </view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.type}}</view>
+      </view>
+      <view class="tr bor" wx:elif="{{index==1}}">
+        <view class="reward">
+          <image src='../../image/silver medal@2x.png' mode='widthFix' />
+          <text>{{item.code}}</text>
+        </view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.type}}</view>
+      </view>
+      <view class="tr bor" wx:elif="{{index==2}}">
+        <view class="reward">
+          <image src='../../image/copper medal@2x.png' mode='widthFix' />
+          <text>{{item.code}}</text>
+        </view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.type}}</view>
+      </view>
+      <view class="tr bor" wx:else>
+        <view class="reward">
+          <image src='' mode='widthFix' />
+          <text>{{item.code}}</text>
+        </view>
+        <view class="td">{{item.text}}</view>
+        <view class="td">{{item.type}}</view>
+      </view>
+    </block>
+  </view>
 </view>
+
+
+<!-- 推荐 -->
+<view class="home_box">
+  <text class="recommended_title">为您推荐</text>
+  <view class="recommended_box">
+
+    <view class="recommended">
+      <image src='' mode='widthFix' />
+      <view class="introduce">
+        <view>中岳俪景湾</view>
+        <view>金岱产业园区临近在建地铁4号线</view>
+        <view class="location">
+            <view>住宅</view>
+            <view>管城回族区</view>
+            <view>管南区域</view>
+            <view>建面73-124㎡</view>
+        </view>
+        <view class="environment">
+          <view class="selling">在售</view>
+          <view>小户型</view>
+          <view>车位充足</view>
+          <view>绿化率高</view>
+        </view>
+        <view class="sizes">23000元/平</view>
+      </view>
+    </view>
+
+    <view class="recommended">
+      <image src='' mode='widthFix' />
+      <view class="introduce">
+        <view>康桥东麓园</view>
+        <view>金岱产业园区临近在建地铁4号线</view>
+        <view class="location">
+            <view>住宅</view>
+            <view>管城回族区</view>
+            <view>管南区域</view>
+            <view>建面73-124㎡</view>
+        </view>
+        <view class="environment">
+          <view class="Waiting">待售</view>
+          <view>小户型</view>
+          <view>车位充足</view>
+          <view>绿化率高</view>
+        </view>
+        <view class="sizes">23000元/平</view>
+      </view>
+    </view>
+  </view>
+</view>
+

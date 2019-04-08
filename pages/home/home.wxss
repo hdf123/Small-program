@@ -1,4 +1,3 @@
-/* pages/home/home.wxss */
 .banner{
   height: 375rpx;
 }
@@ -36,6 +35,7 @@
   width: 662rpx;
   margin:40rpx auto;
 }
+/* 个人信息 */
 .information view{
   height: 90rpx;
   display: flex;
@@ -64,11 +64,21 @@
   width: 29rpx;
 	height: 23rpx;
 }
-.reports text{
+.swiper_container {
+  height: 55rpx;
+  width: 80vw;
+}
+.swiper_item {
   font-size: 24rpx;
   margin-left:48rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height:50rpx;
 }
+/* 表单 */
 .btn{
+  width:100%;
   height: 90rpx;
   color: #ffffff;
   background-color: #d8b87b;
@@ -96,9 +106,178 @@
 }
 .segmentation{
   width:100%;
-  height: 1rpx;
+  padding-bottom:20rpx;
   border-top: 1rpx dashed #a7a8a8;
+  border-bottom: 1rpx dashed #a7a8a8;
 }
 .images{
   height: 126rpx;
+}
+/* 办理流程、优惠表单title */
+.purchase_title{
+  width:80%;
+  text-align: center;
+  margin:40rpx auto 20rpx;
+}
+.rotating{
+  width:100%;
+  height:60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rotating .line{
+  width:45%;
+  height:2rpx;
+  background:#333333;
+}
+.rotating>view:nth-child(2){
+  width:30rpx;
+  height:30rpx;
+  background: #d8b87b;
+  transform:rotate(45deg); 
+}
+/* 办理流程 */
+.process_box{
+  padding-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.process_box>view{
+  width:120rpx;
+}
+.process_box image{
+  width:120rpx;
+  height:120rpx;
+  background: rgb(242, 245, 242,0.5);
+}
+.process_box>view>view{
+  line-height:28rpx;
+}
+.process_box text{
+  font-size:24rpx;
+}
+/* 优惠表单 */
+.table {
+  border: 0rpx solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height:114rpx;
+  align-items: center;
+}
+.bor{
+  border:1rpx solid #e5e5e5;
+  border-top:none;
+}
+.reward{
+  width:40%;
+  display: flex;
+  align-items: center;
+  padding-left:23rpx;
+}
+.reward image{
+  width: 38rpx;
+	height: 48rpx;
+}
+.reward text{
+  font-size: 24rpx;
+  margin-left:24rpx;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+    font-size: 24rpx;
+}
+.bg-w{
+  background: snow;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background-color: #211b1d;
+  color: #fff;
+  display: flex;
+  height:114rpx;
+  align-items: center;
+}
+/* 推荐 */
+.recommended_title{
+  font-size: 36rpx;
+  font-weight: normal;
+}
+.recommended_box{
+  margin-top:50rpx;
+}
+.recommended{
+  display: flex;
+  padding:36rpx 0;
+  border-bottom:1rpx dashed #dddddd;
+}
+.recommended:last-child{
+  border:none;
+}
+.recommended image{
+  width: 190rpx;
+	height: 144rpx;
+  border-radius: 4rpx;
+  background: rgba(209, 248, 209, 0.5)
+}
+.introduce{
+  width:472rpx;
+  padding-left:36rpx;
+}
+.introduce>view:nth-child(1){
+  font-size: 28rpx;
+}
+.introduce>view:nth-child(2){
+  color: #666666;
+  font-size: 20rpx;
+  margin:5rpx 0;
+}
+.location{
+  display: flex;
+  align-items: center;
+}
+.location>view{
+  margin-right:10rpx;
+  color: #999999;
+  font-size: 20rpx;
+}
+.location>view:last-child{
+  padding-left:10rpx;
+  border-left:1rpx solid #e5e5e5;
+}
+.environment{
+  display: flex;
+  margin:5rpx 0;
+}
+.environment>view{
+  color: #999999;
+  font-size: 20rpx;
+  margin-right:10rpx;
+  background-color: #f5f5f5;
+  border-radius: 2rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.environment .selling{
+  color: #ffffff;
+  padding:5rpx 10rpx;
+  background-color: #0099ff;
+}
+.environment .Waiting{
+  color: #ffffff;
+  padding:5rpx 10rpx;
+  background-color: #ffb956;
+}
+.sizes{
+  color: #f9351a;
+  font-size: 28rpx;
 }
