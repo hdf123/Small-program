@@ -43,10 +43,10 @@
         </swiper>
     </view>
     <button class="btn" formType="submit">我要优惠</button>
-    <view class="terms" bindtap='terms'>
-      <image src='{{img}}' class="terms_show" mode='widthFix' />
+    <view class="terms">
+      <image src='{{img}}' class="terms_show" bindtap='terms' mode='widthFix' />
       <view>
-        <text>购买即默认同意</text>
+        <text bindtap='terms'>购买即默认同意</text>
         <text catchtap='ttt'>《购卡须知》</text>
       </view>
     </view>
