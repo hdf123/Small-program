@@ -4,11 +4,9 @@
 <view class="mun">
   <text>已有</text>
   <view>
-    <view>1</view>
-    <view>8</view>
-    <view>5</view>
-    <view>3</view>
-    <view>9</view>
+    <block wx:for="{{menu}}" wx:key="id">
+      <view>{{item}}</view>
+    </block>
   </view>
   <text>人找到优惠</text>
 </view>
@@ -68,19 +66,19 @@
     </view>
     <view class="process_box">
       <view>
-        <image src='' mode='widthFix' />
+        <image src='../../image/图1@2x.png' mode='widthFix' />
         <view>
           <text>1.联系客服办理返金卡</text>
         </view>
       </view>
       <view>
-        <image src='' mode='widthFix' />
+        <image src='../../image/图2@2x.png' mode='widthFix' />
         <view>
           <text>2.预约看房</text>
         </view>
       </view>
       <view>
-        <image src='' mode='widthFix' />
+        <image src='../../image/图3@2x.png' mode='widthFix' />
         <view>
           <text>3.确定房源</text>
         </view>
@@ -88,19 +86,19 @@
     </view>
     <view class="process_box">
       <view>
-        <image src='' mode='widthFix' />
+        <image src='../../image/图4@2x.png' mode='widthFix' />
         <view>
           <text>4.提供购房信息</text>
         </view>
       </view>
       <view>
-        <image src='' mode='widthFix' />
+        <image src='../../image/图5@2x.png' mode='widthFix' />
         <view>
           <text>5.获取额外优惠</text>
         </view>
       </view>
       <view>
-        <image src='' mode='widthFix' />
+        <image src='../../image/图6@2x.png' mode='widthFix' />
         <view>
           <text>6.办理购房合同</text>
         </view>

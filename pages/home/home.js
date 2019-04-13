@@ -8,6 +8,8 @@ Page({
   data: {
     img:"../../image/choose_s.png",
     shiftk:true,
+    strings:"18539",
+    menu:[],
     msgList: [
       { url: "url", title: "多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
       { url: "url", title: "李先生已通过返金卡成功找到优惠 1分钟前" },
@@ -44,6 +46,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var dateList = this.data.strings.split("");
+    this.setData({
+      menu: dateList
+    })
+    console.log(this.data.menu);
     this.termsp();
   },
   termsp:function(){
