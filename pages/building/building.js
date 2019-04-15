@@ -279,23 +279,6 @@ Page({
   test1(){
     var selling = this.data.selling;
     selling[0].checked = !selling[0].checked;
-
-
-    // for (var i = 0; i < selling.length; i++) {
-    //   if (checkArr.indexOf(i + "") != -1) {
-    //     selling[i].checked = true;
-    //   } else {
-    //     selling[i].checked = false;
-    //   }
-    // }
-
-
-
-
-    console.log(this.data.selling);
-
-
-
     this.setData({
       selling:selling
     })
