@@ -5,74 +5,152 @@
   </view>
   <input type="text" class="search_input" placeholder="输入楼盘名/区域" value="{{SearchData.value}}" bindinput='SearchInput' bindconfirm="SearchConfirm" />
 </view>
-<!-- 选择 -->
-<view class="swiper-tab">  
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">
-      区域<view class="triangle {{currentTab==0 ? 'triangles' : ''}}"></view>
-    </view>  
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">
-      价格<view class="triangle {{currentTab==1 ? 'triangles' : ''}}"></view>
-    </view>  
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
-      户型<view class="triangle {{currentTab==2 ? 'triangles' : ''}}"></view>
-    </view>  
-    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">
-      筛选<view class="triangle {{currentTab==3 ? 'triangles' : ''}}"></view>
-    </view>  
+
+
+<view class="box">
+  <!-- 选择 -->
+  <view class="swiper-tab">  
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">
+        区域<view class="triangle {{currentTab==0 ? 'triangles' : ''}}"></view>
+      </view>  
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">
+        价格<view class="triangle {{currentTab==1 ? 'triangles' : ''}}"></view>
+      </view>  
+      <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
+        户型<view class="triangle {{currentTab==2 ? 'triangles' : ''}}"></view>
+      </view>  
+      <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">
+        筛选<view class="triangle {{currentTab==3 ? 'triangles' : ''}}"></view>
+      </view>  
+  </view>
+  <!-- 显示 -->
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight -131}}px" bindchange="bindChange" wx:if="{{state}}">  
+    <swiper-item catchtouchmove='catchTouchMove'> 
+      <scroll-view class="scrollk" scroll-y="true">
+        <checkbox-group bindchange="checkboxChange1">
+          <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr1}}" wx:key="id" bindtap='{{index==0?"limit1":""}}'>
+            {{item.value}}
+          <checkbox value="{{index}}" class="{{index==0?'hiddens':''}}" checked="{{item.checked}}"/>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+      <view class="btn">
+        <button data-one="{{one}}" bindtap='btn1'>确定</button>
+      </view>
+    </swiper-item>  
+    <swiper-item catchtouchmove='catchTouchMove'> 
+      <scroll-view class="scrollk" scroll-y="true">
+        <checkbox-group bindchange="checkboxChange2">
+          <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr2}}" wx:key="id" bindtap='{{index==0?"limit2":""}}'>
+            {{item.value}}
+            <checkbox value="{{index}}" wx:if="{{index!=0}}" checked="{{item.checked}}"/>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+      <view class="btn">
+        <button data-two="{{two}}" bindtap='btn2'>确定</button> 
+      </view>
+    </swiper-item>  
+    <swiper-item catchtouchmove='catchTouchMove'> 
+      <scroll-view class="scrollk" scroll-y="true">
+        <checkbox-group bindchange="checkboxChange3">
+          <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr3}}" wx:key="id" bindtap='{{index==0?"limit3":""}}'>
+            {{item.value}}
+            <checkbox value="{{index}}" wx:if="{{index!=0}}" checked="{{item.checked}}"/>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+      <view class="btn">
+        <button data-three="{{three}}" bindtap='btn3'>确定</button> 
+      </view>
+    </swiper-item>  
+    <swiper-item catchtouchmove='catchTouchMove'>  
+      <scroll-view class="scrollks" scroll-y="true">
+        <!-- 面积 -->
+        <view class="screening_box">
+          <view class="screening">面积 (㎡)</view>
+          <checkbox-group class="check" bindchange="serviceValChange1">  
+            <view class="service_selection">  
+              <block wx:for="{{allGoodsFilte}}" wx:key="id">  
+                <view class="ros">  
+                  <label class="checkboxs {{item.checked?'is_checkeds':''}}">  
+                    <checkbox value="{{item.value}}" checked="{{item.checked}}" hidden="false" />{{item.name}}  
+                  </label>  
+                </view>  
+              </block>  
+            </view>  
+          </checkbox-group>
+        </view>
+        <!-- 类型 -->
+        <view class="screening_box">
+          <view class="screening">物业类型</view>
+          <checkbox-group class="check" bindchange="serviceValChange2">  
+            <view class="service_selection">  
+              <block wx:for="{{typek}}" wx:key="id">  
+                <view class="ros">  
+                  <label class="checkboxs {{item.checked?'is_checkeds':''}}">  
+                    <checkbox value="{{item.value}}" checked="{{item.checked}}" hidden="false" />{{item.name}}  
+                  </label>  
+                </view>  
+              </block>  
+            </view>  
+          </checkbox-group>
+        </view>
+        <!-- 楼盘特色 -->
+        <view class="screening_box">
+          <view class="screening">楼盘特色</view>
+          <checkbox-group class="check" bindchange="serviceValChange3">  
+            <view class="service_selection">  
+              <block wx:for="{{features}}" wx:key="id">  
+                <view class="ros">  
+                  <label class="checkboxs {{item.checked?'is_checkeds':''}}">  
+                    <checkbox value="{{item.value}}" checked="{{item.checked}}" hidden="false" />{{item.name}}  
+                  </label>  
+                </view>  
+              </block>  
+            </view>  
+          </checkbox-group>
+        </view>
+        <!-- 售卖状态 -->
+        <view class="screening_box">
+          <view class="screening">售卖状态</view>
+          <checkbox-group class="check" bindchange="serviceValChange4">  
+            <view class="service_selection">  
+              <block wx:for="{{selling}}" wx:key="id">  
+                <view class="ros">  
+                  <label class="checkboxs {{item.checked?'is_checkeds':''}}">  
+                    <checkbox value="{{item.value}}" checked="{{item.checked}}" hidden="false" />{{item.name}}  
+                  </label>  
+                </view>  
+              </block>  
+            </view>  
+          </checkbox-group>
+        </view>
+      </scroll-view>
+      <view class="btns">
+        <button bindtap='empty'>清空</button> 
+        <button data-three="{{three}}" bindtap='btn4'>确定</button> 
+      </view>
+    </swiper-item>
+  </swiper>
 </view>
-<!-- 显示 -->
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight -31}}px" bindchange="bindChange" wx:if="{{state}}">  
-  <swiper-item catchtouchmove='catchTouchMove'> 
-    <scroll-view class="scrollk" scroll-y="true">
-      <checkbox-group bindchange="checkboxChange1">
-        <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr1}}" wx:key="id" bindtap='{{index==0?"limit1":""}}'>
-          {{item.value}}
-         <checkbox value="{{index}}" class="{{index==0?'hiddens':''}}" checked="{{item.checked}}"/>
-        </label>
-      </checkbox-group>
-    </scroll-view>
-    <view class="btn">
-      <button data-one="{{one}}" bindtap='btn1'>确定</button>
+
+
+
+<!-- 快捷选项 -->
+<view class="quick">
+  <view class="service_selection">
+    <view class="ros kkk" bindtap="test1">
+      <view class="checks {{selling[0].checked?'is_checkeds':''}}">{{selling[0].name}}</view>
     </view>
-  </swiper-item>  
-  <swiper-item catchtouchmove='catchTouchMove'> 
-    <scroll-view class="scrollk" scroll-y="true">
-      <checkbox-group bindchange="checkboxChange2">
-        <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr2}}" wx:key="id" bindtap='{{index==0?"limit2":""}}'>
-          {{item.value}}
-          <checkbox value="{{index}}" wx:if="{{index!=0}}" checked="{{item.checked}}"/>
-        </label>
-      </checkbox-group>
-    </scroll-view>
-    <view class="btn">
-      <button data-two="{{two}}" bindtap='btn2'>确定</button> 
+    <view class="ros" bindtap="test2">
+      <view class="checks {{features[0].checked?'is_checkeds':''}}">{{features[0].name}}</view>
     </view>
-  </swiper-item>  
-  <swiper-item catchtouchmove='catchTouchMove'> 
-    <scroll-view class="scrollk" scroll-y="true">
-      <checkbox-group bindchange="checkboxChange3">
-        <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr3}}" wx:key="id" bindtap='{{index==0?"limit3":""}}'>
-          {{item.value}}
-          <checkbox value="{{index}}" wx:if="{{index!=0}}" checked="{{item.checked}}"/>
-        </label>
-      </checkbox-group>
-    </scroll-view>
-    <view class="btn">
-      <button data-three="{{three}}" bindtap='btn3'>确定</button> 
+    <view class="ros" bindtap="test3">
+      <view class="checks {{features[4].checked?'is_checkeds':''}}">{{features[4].name}}</view>
     </view>
-  </swiper-item>  
-  <swiper-item catchtouchmove='catchTouchMove'>  
-    <scroll-view class="scrollks" scroll-y="true">
-      <checkbox-group bindchange="checkboxChange">
-        <label class="checkbox" wx:for="{{arr4}}" wx:key="id">
-          {{item.value}}
-          <checkbox value="{{item.value}}" wx:if="{{index!=0}}" checked="{{item.checked}}"/>
-        </label>
-      </checkbox-group>
-    </scroll-view>
-    <view class="btns">
-      <button bindtap='empty'>清空</button> 
-      <button data-three="{{three}}" bindtap='btn4'>确定</button> 
+    <view class="ros" bindtap="test4">
+      <view class="checks {{features[1].checked?'is_checkeds':''}}">{{features[1].name}}</view>
     </view>
-  </swiper-item>  
-</swiper>
+  </view>
+</view>

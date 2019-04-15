@@ -21,6 +21,9 @@
   line-height:56rpx;
   font-size: 24rpx;
 }
+.box{
+  position: relative;
+}
 /* 选择 */
 .swiper-tab{  
   width: 100%;  
@@ -59,16 +62,18 @@
   height:100%; 
   width: 100%;
   background:rgba(2, 2, 2, 0.3);
+  position: absolute;
+  top:82rpx;
+  left:0;
   overflow: hidden; 
-}  
-.swiper-box view{  
-  text-align:center;  
 } 
 .scrollk{
   height:400rpx;
 } 
 .scrollks{
-  height:800rpx;
+  height:600rpx;
+  background:white;
+  padding-bottom:50rpx;
 }
 checkbox-group{
   display: flex;
@@ -108,4 +113,77 @@ checkbox-group{
 }
 .btns>button{
   width:45%;
+}
+/* 筛选 */
+.quick{
+  /* display: flex; */
+  padding:40rpx 0 20rpx 31rpx;
+}
+.screening_box{
+  padding:40rpx 0 20rpx 31rpx;
+  border-bottom:1px solid #dddddd;
+}
+.screening_box:last-child{
+  border:none;
+}
+.screening{
+  font-size:32rpx;
+}
+.screenings{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:30rpx;
+}
+.screenings>view{
+  width:25%;
+	display: flex;
+  align-items: center;
+  margin-bottom:30rpx;
+}
+.screenings>view>view{
+  width:80%;
+  height:46rpx;
+  color:rgba(75, 85, 73, 0.2);
+  font-size: 24rpx;
+  background-color: #f5f5f5;
+	border-radius: 4rpx;
+  text-align: center;
+  line-height:46rpx;
+}
+.check{
+  margin-top:29rpx;
+}
+.service_selection {
+  display: flex; 
+  flex-wrap: wrap; 
+}
+.ros{
+  width:25%;
+}
+.service_selection label {  
+  width:80%;
+  height:46rpx;
+  color:rgba(57, 59, 57, 0.9);
+  display: inline-block;
+  background: #f0f1ec; 
+  font-size:24rpx;
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 46rpx;
+  margin-bottom:30rpx;
+}  
+.service_selection .is_checkeds { 
+  color: #d8b87b;  
+  background:rgba(221, 208, 88, 0.3);  
+}
+/* 快捷 */
+.checks{
+  width:80%;
+  line-height:46rpx;
+  font-size:24rpx;
+  text-align: center;
+  color:rgba(57, 59, 57, 0.9);
+  background:#f0f1ec;
+
 }
