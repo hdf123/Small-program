@@ -27,7 +27,7 @@
 /* 选择 */
 .swiper-tab{  
   width: 100%;  
-  border-bottom: 2rpx solid #777777;  
+  /* border-bottom: 2rpx solid #777777;   */
   text-align: center;  
   line-height: 80rpx;
   display: flex;
@@ -117,7 +117,7 @@ checkbox-group{
 /* 筛选 */
 .quick{
   /* display: flex; */
-  padding:40rpx 0 20rpx 31rpx;
+  padding:10rpx 0 20rpx 31rpx;
 }
 .screening_box{
   padding:40rpx 0 20rpx 31rpx;
@@ -186,4 +186,80 @@ checkbox-group{
   color:rgba(57, 59, 57, 0.9);
   background:#f0f1ec;
 
+}
+/* 楼盘 */
+.building_box{
+  width: 662rpx;
+  display: flex;
+  margin:0 auto;
+  padding:36rpx 0 25rpx 0;
+  border-bottom:1px solid #E5E5E5;
+}
+.building_box:last-child{
+  border:none;
+}
+.building_box>image{
+  width: 190rpx;
+	height: 144rpx;
+  border-radius: 4rpx;
+  background: rgba(177, 164, 164, 0.1);
+}
+.buildings{
+  width:436rpx;
+  margin-left:36rpx;
+}
+.buildings>view{
+  display: flex;
+  margin-bottom:10rpx;
+}
+.building_state{
+  display: flex;
+  justify-content: space-between;
+}
+.building_state>view:nth-child(1){
+  font-size: 28rpx;
+}
+.building_state>view:nth-child(2){
+  width: 56rpx;
+	height: 32rpx;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 32rpx;
+  border-radius: 2rpx;
+}
+.building_address>view{
+  color: #999999;
+  font-size: 20rpx;
+  margin-right:14rpx;
+}
+.building_features>view{
+  width: 88rpx;
+	height: 32rpx;
+  color: #999999;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 32rpx;
+	border-radius: 2rpx;
+	border: solid 1px #e5e5e5;
+  margin-right:10rpx;
+}
+.building_area{
+  align-items: flex-end;
+}
+.building_area>view:nth-child(1){
+  color: #f9351a;
+  font-size: 28rpx;
+}
+.building_area>view:nth-child(2){
+  color: #999999;
+  font-size: 20rpx;
+  margin-left:8rpx;
+}
+.b_statea{
+  color: #0099ff;
+  background-color: rgba(0, 153, 255, 0.3);
+}
+.b_stateb{
+  color: #ffb956;
+  background-color: rgba(253, 148, 0, 0.3);
 }

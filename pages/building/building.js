@@ -5,11 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    aaa:"测试",
     winWidth: 0,
     winHeight: 0,
     state: false,// 显示隐藏
     currentTab: 99,// tab切换  
     statek: false,//预留字段
+    sk:[],
     address:'',//区域
     price:'',//价格
     door:'',//户型
@@ -56,14 +58,54 @@ Page({
       { name: '在售', value: '0', checked: false },
       { name: '待售', value: '1', checked: false },
       { name: '售罄', value: '2', checked: false }
-    ]
+    ],
+    arrp:[{ 
+      imgs:"",
+      name: "中岳俪景湾", 
+      state:"在售",
+      address:[{as:"住宅",bs:"管城回族区", cs:"管南区域"}],
+      features:[{ad:"小户型",bd:"车位充足", cd:"绿化率高"}],
+      ak:"14000元/㎡",
+      bk:"建面73-124㎡"
+    },{
+      name: "美盛象湖100",
+      state: "待售",
+      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
+      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    },{
+      name: "美盛象湖101",
+      state: "待售",
+      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
+      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    }, {
+      name: "美盛象湖102",
+      state: "待售",
+      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
+      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    }, {
+      name: "美盛象湖103",
+      state: "待售",
+      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
+      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    }]
   },
   // 截获手动滑动
   catchTouchMove: function (res) {
     return false
   },
   SearchConfirm(){
-    console.log("666");
+    this.setData({
+      aaa:"通过",
+      state: false
+    })
   },
   /** 
      * 滑动切换tab 
@@ -213,9 +255,28 @@ Page({
     })
   },
   // 确认
-  btn1() {
+  synchronous(akk, sk) {
+    for (var i = 0; i < akk.length; i++) {
+      if (akk[i].checked == true) {
+        sk.push(akk[i].value);
+      }
+    }
+  },
+  obtain() {
+    var sk1 = [], sk2 = [], sk3 = [], sk4 = [];
+    var akk1 = this.data.allGoodsFilte;
+    var akk2 = this.data.typek;
+    var akk3 = this.data.features;
+    var akk4 = this.data.selling;
+    this.synchronous(akk1, sk1);
+    this.synchronous(akk2, sk2);
+    this.synchronous(akk3, sk3);
+    this.synchronous(akk4, sk4);
     this.setData({
-      state: false
+      allGoodsFilte: sk1,
+      typek: sk2,
+      featuresk: sk3,
+      SalesStatus: sk4
     })
     console.log("选择区域" + this.data.address);
     console.log("价格范围" + this.data.price);
@@ -225,7 +286,14 @@ Page({
     console.log("楼盘特色：" + this.data.featuresk);
     console.log("销售状态：" + this.data.SalesStatus);
   },
+  btn1() {
+    this.obtain();
+    this.setData({
+      state: false
+    })
+  },
   btn2() {
+    this.obtain();
     this.setData({
       state: false
     })
@@ -233,18 +301,16 @@ Page({
     console.log("价格范围" +this.data.price);
   },
   btn3() {
+    this.obtain();
     this.setData({
       state: false
     })
   },
   btn4() {
+    this.obtain();
     this.setData({
       state: false
     })
-    console.log("面积：" +this.data.area);
-    console.log("物业类型：" + this.data.property);
-    console.log("楼盘特色：" + this.data.featuresk);
-    console.log("销售状态："+this.data.SalesStatus);
   },
   // 清空
   empty() {
@@ -275,13 +341,16 @@ Page({
       kk[i].checked = false;
     }
   },
-  // 同步
+/**
+ * 快捷选择与复选框内容同步
+ */
   test1(){
     var selling = this.data.selling;
     selling[0].checked = !selling[0].checked;
     this.setData({
       selling:selling
     })
+    this.obtain();
   },
   test2(){
     var features = this.data.features;
@@ -289,6 +358,7 @@ Page({
     this.setData({
       features: features
     })
+    this.obtain();
   },
   test3(){
     var features = this.data.features;
@@ -296,6 +366,7 @@ Page({
     this.setData({
       features: features
     })
+    this.obtain();
   },
   test4(){
     var features = this.data.features;
@@ -303,6 +374,16 @@ Page({
     this.setData({
       features: features
     })
+    this.obtain();
+  },
+  /**
+   * 点击其他区域，弹窗消失
+   */
+  toggleDialog() {
+    this.setData({
+      state:false
+    });
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -320,14 +401,7 @@ Page({
         });
       }
     });
-    wx: wx.setNavigationBarTitle({
-      title: '导航',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -339,7 +413,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      state: false
+    })
   },
 
   /**
@@ -360,7 +436,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+  // "enablePullDownRefresh": true, //开启下拉刷新；
+  // "onReachBottomDistance": 50, //页面上拉触底事件触发时距页面底部距离，单位为px。
   },
 
   /**
