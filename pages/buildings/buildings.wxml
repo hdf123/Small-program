@@ -1,5 +1,5 @@
 <view class="swiperContainer">
-  <swiper class="swiper" bindchange="swiperChange" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+  <swiper class="swiper1" bindchange="swiperChange" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="*this">
       <swiper-item wx:key="*this">
         <image src="{{item}}" class="slide-image"  class='img'  />
@@ -50,7 +50,11 @@
     </view>
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
-  <button class="btn1">更多信息</button>
+
+
+  <navigator  class="btn1" url="../information/information">更多信息</navigator>
+
+
 </view>
 <view class="latests">
   <image src='../../image/latest.png' mode='widthFix' />
@@ -63,13 +67,14 @@
   </swiper>
 </view>
 <!-- 户型 -->
-<view class="door">
+<navigator class="door doors" url="../model/model">
   <text>户型介绍(5)</text>
   <view>
     <text class="aas">全部户型</text>
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
-</view>
+</navigator>
+
 <!-- 户型展示 -->
 <view class="door_box">
   <view class="door_child">
@@ -115,14 +120,16 @@
     markers="{{markers}}" covers="{{covers}}" show-location>
   </map>
 </view>
-<!-- 用户点评 -->
-<view class="door review">
+<navigator class="door review" url="">
   <text>用户点评(6)</text>
   <view>
     <text class="aas">查看更多</text>
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
-</view>
+</navigator>
+
+
+
 <view class="review_box">
   <view>
     <view class="review_object">
@@ -170,15 +177,60 @@
       2019年2月16日
     </view>
   </view>
-  <button class="btn2">我要点评</button>
+  <navigator class="btn2" url="">我要点评</navigator>
 </view>
 <view class="recommend">周边推荐</view>
-<view class="swiperContainer">
-  <swiper class="swiper" bindchange="swiperChange" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key="*this">
-      <swiper-item wx:key="*this">
-        <image src="{{item}}" class="slide-image"  class='img'  />
-      </swiper-item>
-    </block>
-  </swiper>
+<swiper class="swiper2" bindchange="swiperChange" display-multiple-items="2.07" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园1</view>
+      <view>文化路三全路交叉口</view>
+      <view>均价：15000元/平</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园2</view>
+      <view>文化路三全路交叉口</view>
+      <view>均价：15000元/平</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园3</view>
+      <view>文化路三全路交叉口</view>
+      <view>均价：15000元/平</view>
+    </view>
+  </swiper-item>
+</swiper>
+<view class="recommend project">专题推荐</view>
+<swiper class="swiper3" bindchange="swiperChange" display-multiple-items="2.07" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>钜惠北龙湖1</view>
+      <view>文化路三全路交叉口</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>泰山誉景2</view>
+      <view>文化路三全路交叉口文化路三全路交叉口</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园3</view>
+      <view>文化路三全路交叉口</view>
+    </view>
+  </swiper-item>
+</swiper>
+<view class="service">
+  <button open-type='contact'>联系客服</button>
+  <button>我要优惠</button>
 </view>

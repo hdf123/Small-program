@@ -1,6 +1,8 @@
 {
   "pages":[
+    "pages/information/information",
     "pages/buildings/buildings",
+    "pages/model/model",
     "pages/building/building",
     "pages/home/home",
     "pages/my/my",

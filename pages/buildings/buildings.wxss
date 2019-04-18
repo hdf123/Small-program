@@ -1,4 +1,4 @@
-.swiper{
+.swiper1{
   height: 544rpx;
 }
 .swiperContainer {
@@ -23,6 +23,7 @@
 }
 /* 详情 */
 .details_box{
+  box-sizing:border-box;
   width: 690rpx;
   height:564rpx;
   background:white;
@@ -31,7 +32,7 @@
   border-radius: 4rpx;
   top:-56rpx;
   left:0;
-  padding:40rpx 0 0 35rpx;
+  padding:40rpx 35rpx 0 35rpx;
   box-shadow: 0px 1px 20rpx 0px #f5f5f5;
 }
 .details_box>view:nth-child(1){
@@ -91,7 +92,6 @@
   display: flex;
   align-items: center;
   justify-content:space-between;
-  padding-right:5%;
   margin-top:10rpx;
 }
 .showks>view{
@@ -100,10 +100,15 @@
 .showks image{
   width:15rpx;
 }
-.btn{
-  height:90rpx;
+.btn1,.btn2{
+	width:100%;
+	height: 90rpx;
   color: #d8b87b;
-  line-height: 90rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height:90rpx;
+	background-color: #f9f9f9;
+	border-radius:8rpx;
   margin-top:45rpx;
 }
 /* 滚动通知 */
@@ -142,9 +147,17 @@
   justify-content:space-between;
   margin:20rpx auto;
 }
+.doors{
+  margin-top:71rpx;
+}
 .door>text{
   font-size: 36rpx;
 }
+.door>view{
+  display:flex;
+  align-items: center;
+}
+
 .door .aas{
   font-size: 24rpx;
   color: #999999;
@@ -167,7 +180,7 @@
 .door_image>image{
   width: 216rpx;
   max-height:229rpx;
-  background:rgba(0, 153, 255,0.5);
+  background:rgba(192, 199, 204, 0.1);
 }
 .pattern{
   display:flex;
@@ -178,9 +191,12 @@
 .pattern>view:nth-child(2){
   font-size: 22rpx;
   margin-left:20rpx;
+  display: flex;
+  align-items: center;
 }
 .door_state{
   color: #0099ff;
+  padding:0 8rpx;
   background-color: rgba(0, 153, 255, 0.3);
 }
 .direction{
@@ -202,9 +218,8 @@
 }
 .page-section-gap{
   width: 690rpx;
-	height:600rpx;
   margin:0 auto;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(238, 232, 232, 0.1);
 }
 map{
   width:100%;
@@ -246,7 +261,7 @@ map{
 .renum{
   width:20%;
   display: flex;
-  align-items: center;
+  align-items:flex-end;
   justify-content: flex-end;
 }
 .renum text{
@@ -272,15 +287,62 @@ map{
 .reimgs image{
   width: 153rpx;
 	height: 153rpx;
-  background: rgba(0, 153, 255,0.5);
+  background: rgba(205, 209, 212, 0.1);
   margin:0 10rpx;
-}
-.btn2{
-  margin-bottom:72rpx;
 }
 /* 推荐 */
 .recommend{
   width:690rpx;
   font-size: 36rpx;
-  margin:0 auto;
+  margin:70rpx auto 39rpx;
+}
+.project{
+  margin-top:40rpx;
+}
+/*推荐轮播*/
+.swiper2,.swiper3{
+  height:356rpx;
+  margin-left:30rpx;
+}
+.swiper2 .swi_box,.swiper3 .swi_box{
+  width:348rpx;
+}
+.swi_box image{
+  width: 332rpx;
+	height: 222rpx;
+	background-color:rgba(210, 219, 224, 0.3);
+	border-radius: 4rpx;
+}
+.swi_box>view:nth-child(2){
+  font-size: 30rpx;
+}
+.swi_box>view:nth-child(3){
+  color: #999999;
+  font-size: 24rpx;
+  line-height:36rpx;
+}
+.swi_box>view:nth-child(4){
+  color: #f9351a;
+  font-size: 28rpx;
+}
+/* 服务 */
+.service{
+  height: 116rpx;
+  display: flex;
+  align-items: center;
+  border-top:1px solid #dddddd;
+  margin-top:20rpx;
+}
+.service>button{
+  width: 335rpx;
+	height: 72rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+  line-height:72rpx;
+}
+.service>button:nth-child(1){
+  background-color: #d8b87b;
+}
+.service>button:nth-child(2){
+  background-color: #211b1d;
 }

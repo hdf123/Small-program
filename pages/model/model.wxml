@@ -1,0 +1,101 @@
+<!-- redirect.wxml -->
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部(8)</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">一室(7)</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">二室(5)</view>  
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">三室(4)</view>  
+    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">五室及以上</view>  
+</view>  
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+    <swiper-item>
+
+
+      <view class="pattern_box" wx:for="{{arr1}}" wx:key="id">
+        <image src='' mode='widthFix' />
+        <view>
+          <view class="nums">
+            <view>{{item.name}}</view>
+            <view class="{{item.state=='在售'?'state':'stata'}}">{{item.state}}</view>
+          </view>
+          <view class="area">{{item.area}}</view>
+          <view class="features">
+            <block wx:for="{{item.features}}" wx:key="id">
+              <view>{{item}}</view>
+            </block>
+          </view>
+          <view class="many">{{item.many}}</view>
+        </view>
+      </view>
+
+
+    </swiper-item> 
+    <swiper-item>  
+      <view class="pattern_box">
+        <image src='' mode='widthFix' />
+        <view>
+          <view class="nums">
+            <view>1室1厅1卫</view>
+            <view class="{{state=='在售'?'state':'stata'}}">在售</view>
+          </view>
+          <view class="area">建面 117.4㎡  朝向南</view>
+          <view class="features">
+            <view>南北通透</view>
+            <view>景观阳台</view>
+          </view>
+          <view class="many">约375万/套</view>
+        </view>
+      </view>
+    </swiper-item> 
+    <swiper-item>  
+      <view class="pattern_box">
+        <image src='' mode='widthFix' />
+        <view>
+          <view class="nums">
+            <view>2室2厅2卫</view>
+            <view class="{{state=='在售'?'state':'stata'}}">在售</view>
+          </view>
+          <view class="area">建面 117.4㎡  朝向南</view>
+          <view class="features">
+            <view>南北通透</view>
+            <view>景观阳台</view>
+          </view>
+          <view class="many">约375万/套</view>
+        </view>
+      </view> 
+    </swiper-item>  
+    <swiper-item>  
+      <view class="pattern_box">
+        <image src='' mode='widthFix' />
+        <view>
+          <view class="nums">
+            <view>3室2厅2卫</view>
+            <view class="{{state=='在售'?'state':'stata'}}">在售</view>
+          </view>
+          <view class="area">建面 117.4㎡  朝向南</view>
+          <view class="features">
+            <view>南北通透</view>
+            <view>景观阳台</view>
+          </view>
+          <view class="many">约375万/套</view>
+        </view>
+      </view>
+    </swiper-item>  
+    <swiper-item>  
+      <view class="pattern_box">
+        <image src='' mode='widthFix' />
+        <view>
+          <view class="nums">
+            <view>3室2厅2卫</view>
+            <view class="{{state=='在售'?'state':'stata'}}">在售</view>
+          </view>
+          <view class="area">建面 117.4㎡  朝向南</view>
+          <view class="features">
+            <view>南北通透</view>
+            <view>景观阳台</view>
+          </view>
+          <view class="many">约375万/套</view>
+        </view>
+      </view>
+    </swiper-item>  
+</swiper>

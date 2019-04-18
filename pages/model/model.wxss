@@ -1,0 +1,86 @@
+.swiper-tab{  
+  width: 100%;  
+  border-bottom: 2rpx solid #777777;  
+  text-align: center;  
+  line-height: 80rpx;
+}  
+.swiper-tab-list{  font-size: 30rpx;  
+  display: inline-block;  
+  width:20%;  
+  color: #777777;  
+}  
+.on{ 
+  color: #da7c0c;  
+  border-bottom: 5rpx solid #da7c0c;
+}  
+.swiper-box{
+  display: block; 
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+}
+/* 格局 */
+.pattern_box{
+  box-sizing:border-box;
+  width:100%;
+  height: 240rpx;
+  display: flex;
+  padding:26rpx 0rpx 26rpx 107rpx;
+  border-bottom:1px solid #E5E5E5;
+}
+.pattern_box:last-child{
+  border:none;
+}
+.pattern_box>image{
+  width: 165rpx;
+	height: 188rpx;
+  background:rgba(143, 192, 176, 0.3);
+}
+.pattern_box>view{
+  margin-left:128rpx;
+}
+.nums{
+  display: flex;
+}
+.nums>view:nth-child(1){
+  font-size:32rpx;
+}
+.nums>view:nth-child(2){
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  padding:0 8rpx;
+  margin-left:11rpx;
+}
+.state{
+  color: #0099ff;
+  background-color: rgba(1, 243, 252, 0.5);
+}
+.stata{
+  color: #ffb956;
+  background-color: rgba(253, 148, 0, 0.3);
+}
+.area{
+  font-size:24rpx;
+  color: #666666;
+  line-height:50rpx;
+}
+.features{
+  display: flex;
+}
+.features>view{
+  color: #999999;
+  font-size: 22rpx;
+	border-radius: 4rpx;
+  margin-right:20rpx;
+  padding:5rpx 10rpx;
+	border: solid 1px #e5e5e5;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.many{
+  color: #f9351a;
+  font-size: 28rpx;
+  margin-top:10rpx;
+}

@@ -1,0 +1,55 @@
+<view class="information_box">
+  <view id="developers">
+    <view>开发商</view>
+    <view>{{developers}}</view>
+  </view>
+  <view class="start">
+    <view>开盘时间</view>
+    <view>2018年1月14日</view>
+  </view>
+  <view>
+    <view>交房时间</view>
+    <view>2019年底</view>
+  </view>
+  <view>
+    <view>建筑类型</view>
+    <view>多层 高层</view>
+  </view>
+  <view>
+    <view>装修状况</view>
+    <view>精装修</view>
+  </view>
+  <view>
+    <view>住户数</view>
+    <view>7030</view>
+  </view>
+  <view>
+    <view>容积率</view>
+    <view>3.11</view>
+  </view>
+  <view>
+    <view>停车位</view>
+    <view></view>
+  </view>
+  <view id="traffic">
+    <view>交通路线</view>
+    <view>
+      <block wx:for="{{traffic}}" wx:key="id">
+        <block wx:if="{{index==traffic.length-1}}">{{item}}</block>
+        <block wx:else>{{item}}、</block>
+      </block>
+    </view>
+  </view>
+  <view>
+    <view>物业公司</view>
+    <view></view>
+  </view>
+  <view>
+    <view>周边配套</view>
+    <view class="treatment">
+      <view>教育：项目自带2所幼儿园、2所小学，周边有郑州中学附属小学，郑州中学、信息工程大学等顶级一站式名校教育资源</view>
+      <view>银行：中国银行、交通银行、建设银行、工商银行、民生银行、洛阳银行、郑州银行、中信银行 </view>
+      <view>社区配套：风情商业街、托老所，社区服务中心、社区卫生服务站</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+.information_box{
+  padding-bottom:20rpx;
+}
+.information_box>view{
+  padding:0 30rpx;
+  display: flex;
+  border-bottom:1px solid #E5E5E5;
+}
+.information_box>view:last-child{
+  border:none;
+}
+.information_box>view>view{
+  box-sizing:border-box;
+  padding:30rpx 0;
+  font-size: 30rpx;
+}
+.information_box>view>view:nth-child(1){
+  width:160rpx;
+  color: #666666;
+}
+.information_box>view>view:nth-child(2){
+  width:560rpx;
+}
+#developers{
+  border-top:20rpx solid #F5F5F5;
+  border-bottom:20rpx solid #F5F5F5;
+}
+#traffic{
+  border-bottom:20rpx solid #E5E5E5;
+}
+.treatment>view{
+  font-size: 28rpx;
+}
