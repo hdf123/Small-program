@@ -31,12 +31,12 @@
 .pattern_box:last-child{
   border:none;
 }
-.pattern_box>image{
+.pattern_box>view:nth-child(1)>image{
   width: 165rpx;
 	height: 188rpx;
   background:rgba(143, 192, 176, 0.3);
 }
-.pattern_box>view{
+.pattern_box>view:nth-child(2){
   margin-left:128rpx;
 }
 .nums{

@@ -1,11 +1,17 @@
 {
   "pages":[
-    "pages/information/information",
-    "pages/buildings/buildings",
     "pages/model/model",
+    "pages/preview/preview",
+    "pages/all/all",
+    "pages/buildings/buildings",
     "pages/building/building",
     "pages/home/home",
     "pages/my/my",
+    
+    "pages/comments/comments",
+    "pages/information/information",
+    
+    "pages/review/review",
     "pages/BuyNow/BuyNow",
     "pages/buy/buy",
     "pages/instructions/instructions"

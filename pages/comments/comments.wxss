@@ -1,0 +1,70 @@
+.review_box{
+  width: 690rpx;
+  margin:0 auto;
+}
+.review_box>view{
+  margin-bottom:60rpx;
+  border-bottom:1px solid #E5E5E5;
+}
+.review_object{
+  display: flex;
+}
+.reimg{
+  width:80%;
+  display: flex;
+  align-items: center;
+}
+.reimg image{
+  width: 72rpx;
+	height: 72rpx;
+  border-radius:50%;
+  background: rgba(0, 153, 255, 0.3);
+}
+.reimg text{
+  width:80%;
+  margin-left:20rpx;
+  display:inline-block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.renum{
+  width:20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.reds{
+  color:#F9351A;
+}
+.renum text{
+  box-sizing:border-box;
+  height:100%;
+  display: inline-block;
+  font-size: 24rpx;
+  margin-right:20rpx;
+  padding-top:27rpx;
+}
+.renum image{
+  width: 32rpx;
+	height: 32rpx;
+}
+.recontent{
+  font-size: 28rpx;
+  margin-top:54rpx;
+}
+.retime{
+  color: #999999;
+  font-size: 24rpx;
+  line-height:80rpx;
+}
+.reimgs{
+  width:100%;
+  margin:30rpx 0;
+}
+.reimgs image{
+  width: 153rpx;
+	height: 153rpx;
+  background: rgba(205, 209, 212, 0.1);
+  margin:0 10rpx;
+}

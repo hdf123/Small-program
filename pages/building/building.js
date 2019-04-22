@@ -1,6 +1,5 @@
 // pages/building/building.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -76,7 +75,7 @@ Page({
       bk: "建面137-215㎡"
     },{
       name: "美盛象湖101",
-      state: "待售",
+        state: "售罄",
       address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
       features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
       ak: "14500元/平",
@@ -90,6 +89,20 @@ Page({
       bk: "建面137-215㎡"
     }, {
       name: "美盛象湖103",
+      state: "待售",
+      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
+      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    }, {
+      name: "美盛象湖104",
+      state: "待售",
+      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
+      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    }, {
+      name: "美盛象湖105",
       state: "待售",
       address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
       features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
@@ -220,7 +233,6 @@ Page({
     var allGoodsFilte = this.data.allGoodsFilte;
     var checkArr = e.detail.value;
     this.screening(checkArr,allGoodsFilte);
-    console.log(checkArr);
     this.setData({
       allGoodsFilte: allGoodsFilte,
       area: checkArr
@@ -240,6 +252,7 @@ Page({
     var features = this.data.features;
     var checkArr = e.detail.value;
     this.screening(checkArr, features);
+    console.log(checkArr);
     this.setData({
       features: features,
       featuresk: checkArr
@@ -264,6 +277,7 @@ Page({
   },
   obtain() {
     var sk1 = [], sk2 = [], sk3 = [], sk4 = [];
+    console.log(this.data.allGoodsFilte);
     var akk1 = this.data.allGoodsFilte;
     var akk2 = this.data.typek;
     var akk3 = this.data.features;
@@ -273,18 +287,18 @@ Page({
     this.synchronous(akk3, sk3);
     this.synchronous(akk4, sk4);
     this.setData({
-      allGoodsFilte: sk1,
-      typek: sk2,
-      featuresk: sk3,
-      SalesStatus: sk4
+      area: sk1,//面积
+      property: sk2,//类型
+      featuresk: sk3,//特色
+      SalesStatus: sk4//状态
     })
-    console.log("选择区域" + this.data.address);
-    console.log("价格范围" + this.data.price);
+    console.log("区域：" + this.data.address);
+    console.log("价格：" + this.data.price);
     console.log("户型：" + this.data.door);
     console.log("面积：" + this.data.area);
-    console.log("物业类型：" + this.data.property);
-    console.log("楼盘特色：" + this.data.featuresk);
-    console.log("销售状态：" + this.data.SalesStatus);
+    console.log("类型：" + this.data.property);
+    console.log("特色：" + this.data.featuresk);
+    console.log("状态：" + this.data.SalesStatus);
   },
   btn1() {
     this.obtain();
@@ -297,8 +311,6 @@ Page({
     this.setData({
       state: false
     })
-    console.log("选择区域" + this.data.address);
-    console.log("价格范围" +this.data.price);
   },
   btn3() {
     this.obtain();
@@ -309,7 +321,7 @@ Page({
   btn4() {
     this.obtain();
     this.setData({
-      state: false
+      state:false
     })
   },
   // 清空
@@ -344,6 +356,11 @@ Page({
 /**
  * 快捷选择与复选框内容同步
  */
+  passk(){
+    this.setData({
+      currentTab: 3
+    })
+  },
   test1(){
     var selling = this.data.selling;
     selling[0].checked = !selling[0].checked;
@@ -351,6 +368,7 @@ Page({
       selling:selling
     })
     this.obtain();
+    this.passk();
   },
   test2(){
     var features = this.data.features;
@@ -359,6 +377,7 @@ Page({
       features: features
     })
     this.obtain();
+    this.passk();
   },
   test3(){
     var features = this.data.features;
@@ -367,6 +386,7 @@ Page({
       features: features
     })
     this.obtain();
+    this.passk();
   },
   test4(){
     var features = this.data.features;
@@ -375,6 +395,7 @@ Page({
       features: features
     })
     this.obtain();
+    this.passk();
   },
   /**
    * 点击其他区域，弹窗消失

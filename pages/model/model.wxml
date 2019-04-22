@@ -9,16 +9,20 @@
   
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
     <swiper-item>
-
-
-      <view class="pattern_box" wx:for="{{arr1}}" wx:key="id">
-        <image src='' mode='widthFix' />
+      <navigator class="pattern_box" wx:for="{{arr1}}" wx:key="id" url="../buildings/buildings">
+        <view catchtap="btn" data-urlk="{{item.url}}" data-arrs="{{item.area}}">
+          <image src='{{item.url}}' mode='widthFix' />
+        </view>
         <view>
           <view class="nums">
             <view>{{item.name}}</view>
             <view class="{{item.state=='在售'?'state':'stata'}}">{{item.state}}</view>
           </view>
-          <view class="area">{{item.area}}</view>
+          <view class="area">
+            <block wx:for="{{item.area}}" wx:key="ic">
+              {{item}}
+            </block>
+          </view>
           <view class="features">
             <block wx:for="{{item.features}}" wx:key="id">
               <view>{{item}}</view>
@@ -26,13 +30,13 @@
           </view>
           <view class="many">{{item.many}}</view>
         </view>
-      </view>
-
-
+      </navigator>
     </swiper-item> 
-    <swiper-item>  
-      <view class="pattern_box">
-        <image src='' mode='widthFix' />
+    <swiper-item> 
+      <navigator class="pattern_box" url="">
+        <view catchtap="btn">
+          <image src='{{item.url}}' mode='widthFix' />
+        </view>
         <view>
           <view class="nums">
             <view>1室1厅1卫</view>
@@ -45,11 +49,13 @@
           </view>
           <view class="many">约375万/套</view>
         </view>
-      </view>
+      </navigator>
     </swiper-item> 
     <swiper-item>  
-      <view class="pattern_box">
-        <image src='' mode='widthFix' />
+      <navigator class="pattern_box" url="">
+        <view catchtap="btn">
+          <image src='{{item.url}}' mode='widthFix' />
+        </view>
         <view>
           <view class="nums">
             <view>2室2厅2卫</view>
@@ -62,11 +68,13 @@
           </view>
           <view class="many">约375万/套</view>
         </view>
-      </view> 
+      </navigator>
     </swiper-item>  
     <swiper-item>  
-      <view class="pattern_box">
-        <image src='' mode='widthFix' />
+      <navigator class="pattern_box" url="">
+        <view catchtap="btn">
+          <image src='{{item.url}}' mode='widthFix' />
+        </view>
         <view>
           <view class="nums">
             <view>3室2厅2卫</view>
@@ -79,14 +87,16 @@
           </view>
           <view class="many">约375万/套</view>
         </view>
-      </view>
+      </navigator>
     </swiper-item>  
     <swiper-item>  
-      <view class="pattern_box">
-        <image src='' mode='widthFix' />
+      <navigator class="pattern_box" url="../buildings/buildings">
+        <view catchtap="btn">
+          <image src='{{item.url}}' mode='widthFix' />
+        </view>
         <view>
           <view class="nums">
-            <view>3室2厅2卫</view>
+            <view>6室3厅3卫</view>
             <view class="{{state=='在售'?'state':'stata'}}">在售</view>
           </view>
           <view class="area">建面 117.4㎡  朝向南</view>
@@ -96,6 +106,6 @@
           </view>
           <view class="many">约375万/套</view>
         </view>
-      </view>
+      </navigator>
     </swiper-item>  
 </swiper>

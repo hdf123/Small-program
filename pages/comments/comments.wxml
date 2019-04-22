@@ -1,0 +1,31 @@
+<view class="review_box">
+  <view wx:for="{{arr}}" wx:key="id">
+    <view class="review_object">
+      <view class="reimg">
+        <image src='' mode='widthFix' />
+        <text>{{item.name}}</text>
+      </view>
+      <view class="renum" data-index="{{index}}" bindtap='praise'>
+        <!-- 点赞过 -->
+        <block wx:if="{{item.collected==1}}">
+          <text class="reds">{{item.praise}}</text>
+          <image src='../../image/ab.png' mode='widthFix' />
+        </block>
+        <!-- 未点赞 -->
+        <block wx:else>
+          <text>{{item.praise}}</text>
+         <image src='../../image/aa.png' mode='widthFix' />
+        </block>
+      </view>
+    </view>
+    <view class="recontent">
+      {{item.evaluation}}。
+      <view class="reimgs" wx:if="{{item.picture.length>0}}">
+        <block wx:for="{{item.picture}}" wx:key="id">
+          <image src='{{item}}' mode='widthFix' />
+        </block>
+      </view>
+    </view>
+    <view class="retime">{{item.time}}</view>
+  </view>
+</view>

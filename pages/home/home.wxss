@@ -283,3 +283,11 @@
   color: #f9351a;
   font-size: 28rpx;
 }
+/* 咨询 */
+.consulting{
+	width: 100rpx;
+	height: 100rpx;
+  position:fixed;
+  right:40rpx;
+  bottom:210rpx;
+}

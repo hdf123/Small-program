@@ -1,0 +1,12 @@
+<block wx:for="{{arr}}" wx:key="id">
+  <view class="images">
+  <view>
+    <block wx:for="{{item.features}}" wx:key="id">
+      <view>{{item}}</view>
+    </block>
+  </view>
+    <view>
+      <image src="{{item.urls}}" mode="widthFix" />
+    </view>
+  </view>
+</block>

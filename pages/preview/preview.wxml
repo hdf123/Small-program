@@ -1,0 +1,15 @@
+<view class="content" style="height:{{winHeight*0.8}}px">
+  <image src='https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b51889744910df7979a2f672434da84e.jpg?thumb=1&w=720&h=360' mode='widthFix' />
+</view>
+<view class="instructions">
+  <view>
+    <view class="conditions">
+      <view>4室2厅2卫</view>
+      <view>建面184㎡</view>
+      <view>朝南</view>
+      <view>在售</view>
+    </view>
+    <view class="muns">约490万/套</view>
+  </view>
+  <view class="btn" bindtap='btn'>查看全部</view>
+</view>

@@ -1,10 +1,7 @@
-// pages/home/home.js
 Page({
-
   /**
    * 页面的初始数据
    */
-
   data: {
     img:"../../image/choose_s.png",
     shiftk:true,
@@ -50,7 +47,6 @@ Page({
     this.setData({
       menu: dateList
     })
-    console.log(this.data.menu);
     this.termsp();
   },
   termsp:function(){

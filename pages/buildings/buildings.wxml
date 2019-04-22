@@ -2,7 +2,7 @@
   <swiper class="swiper1" bindchange="swiperChange" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="*this">
       <swiper-item wx:key="*this">
-        <image src="{{item}}" class="slide-image"  class='img'  />
+        <image src="{{item}}" class="slide-image" bindtap="listenerButtonPreviewImage" data-index="{{index}}" class='img'  />
       </swiper-item>
     </block>
   </swiper>
@@ -120,65 +120,51 @@
     markers="{{markers}}" covers="{{covers}}" show-location>
   </map>
 </view>
-<navigator class="door review" url="">
+
+
+<!-- 点评 -->
+<navigator class="door review" url="../comments/comments">
   <text>用户点评(6)</text>
   <view>
     <text class="aas">查看更多</text>
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
 </navigator>
-
-
-
 <view class="review_box">
-  <view>
+  <view wx:for="{{arr}}" wx:key="id">
     <view class="review_object">
       <view class="reimg">
         <image src='' mode='widthFix' />
-        <text>138****6687138****6687138****6687</text>
+        <text>{{item.name}}</text>
       </view>
-      <view class="renum">
-        <text>8</text>
-        <image src='../../image/like@2x.png' mode='widthFix' />
-      </view>
-    </view>
-
-    <view class="recontent">
-      户型设计合理，地理位置得天独厚，服务态度很好，周边配套齐全，性价比高。
-    </view>
-    <view class="retime">
-      2019年2月16日
-    </view>
-  </view>
-  <view>
-    <view class="review_object">
-      <view class="reimg">
-        <image src='' mode='widthFix' />
-        <text>138****6687138****6687138****6687</text>
-      </view>
-      <view class="renum">
-        <text>8</text>
-        <image src='../../image/like@2x.png' mode='widthFix' />
+      <view class="renum" data-index="{{index}}" bindtap='praise'>
+        <!-- 点赞过 -->
+        <block wx:if="{{item.collected==1}}">
+          <text class="reds">{{item.praise}}</text>
+          <image src='../../image/ab.png' mode='widthFix' />
+        </block>
+        <!-- 未点赞 -->
+        <block wx:else>
+          <text>{{item.praise}}</text>
+          <image src='../../image/aa.png' mode='widthFix' />
+        </block>
       </view>
     </view>
     <view class="recontent">
-      户型设计合理，地理位置得天独厚，服务态度很好，周边配套齐全，性价比高。
-      <view class="reimgs">
-        <image src='' mode='widthFix' />
-        <image src='' mode='widthFix' />
-        <image src='' mode='widthFix' />
-        <image src='' mode='widthFix' />
-        <image src='' mode='widthFix' />
-        <image src='' mode='widthFix' />
-        <image src='' mode='widthFix' />
+      {{item.evaluation}}。
+      <view class="reimgs" wx:if="{{item.picture.length>0}}">
+        <block wx:for="{{item.picture}}" wx:key="id">
+          <image src='{{item}}' mode='widthFix' />
+        </block>
       </view>
     </view>
-    <view class="retime">
-      2019年2月16日
-    </view>
+    <view class="retime">{{item.time}}</view>
   </view>
-  <navigator class="btn2" url="">我要点评</navigator>
+  <navigator class="btn2" url="../review/review">我要点评</navigator>
 </view>
+
+
+<!-- 推荐 -->
 <view class="recommend">周边推荐</view>
 <swiper class="swiper2" bindchange="swiperChange" display-multiple-items="2.07" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
   <swiper-item>

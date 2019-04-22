@@ -1,0 +1,82 @@
+/* 评论 */
+.conts{
+  width:90%;
+  height: auto;
+  position:relative;
+  padding-bottom:30rpx;
+  margin:0 auto;
+}
+.areas{
+  box-sizing:border-box;
+  width:95%;
+  height:170rpx;
+  font-size: 30rpx;
+  text-indent: 28rpx;
+  padding-top:10rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative; 
+}
+.currentWordNumber{
+  font-size: 20rpx;
+  color: gray;
+  position: absolute;
+  right:10rpx;
+  bottom:0;
+}
+/* 图片 */
+.img_box{
+  width:690rpx;
+  position:relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin:20rpx auto 0;
+}
+.imgs{
+  width:33.33333333%;
+  display: flex;
+  justify-content: center;
+  margin-bottom:20rpx;
+  position:relative;
+}
+.imgs .imga{
+  width:90%;
+  max-height:212rpx;
+  border:1px solid rgba(214, 212, 212, 0.1);
+}
+.imgs .images{
+  position:relative;
+}
+.imgs .delete{
+  width: 44rpx;
+	height: 44rpx;
+  position:absolute;
+  top:0;
+  right:5%;
+}
+.img_box .images{
+  width:90%;
+	height: 212rpx;
+  border:1px solid #E8E8E8;
+  border-radius:4rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img_box .images>image{
+  width:60rpx;
+	height:60rpx;
+}
+/* 提交按钮 */
+.btn{
+  width: 618rpx;
+	height: 90rpx;
+  background-color: #d8b87b;
+	border-radius: 4rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  margin:60rpx auto 0;
+}

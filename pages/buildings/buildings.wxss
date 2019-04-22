@@ -145,10 +145,11 @@
   width: 690rpx;
   display: flex;
   justify-content:space-between;
-  margin:20rpx auto;
+  padding:20rpx 0;
+  margin:0 auto;
 }
 .doors{
-  margin-top:71rpx;
+  margin-top:51rpx;
 }
 .door>text{
   font-size: 36rpx;
@@ -227,14 +228,14 @@ map{
 }
 /* 用户点评 */
 .review{
-  margin-top:71rpx;
+  margin-top:51rpx;
 }
 .review_box{
   width: 690rpx;
   margin:0 auto;
 }
 .review_box>view{
-  margin-bottom:60rpx;
+  margin-bottom:30rpx;
 }
 .review_object{
   display: flex;
@@ -261,12 +262,19 @@ map{
 .renum{
   width:20%;
   display: flex;
-  align-items:flex-end;
+  align-items: center;
   justify-content: flex-end;
 }
+.reds{
+  color:#F9351A;
+}
 .renum text{
+  box-sizing:border-box;
+  height:100%;
+  display: inline-block;
   font-size: 24rpx;
   margin-right:20rpx;
+  padding-top:25rpx;
 }
 .renum image{
   width: 32rpx;
@@ -274,11 +282,12 @@ map{
 }
 .recontent{
   font-size: 28rpx;
-  margin:54rpx 0 37rpx 0;
+  margin-top:37rpx;
 }
 .retime{
   color: #999999;
   font-size: 24rpx;
+  line-height:80rpx;
 }
 .reimgs{
   width:100%;

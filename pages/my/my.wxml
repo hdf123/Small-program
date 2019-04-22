@@ -23,7 +23,7 @@
   <image src="../../image/banner@2x.png"></image>
 </view>
 
-<view class="mlist" wx:for="{{mlist}}" bindtap='back' data-url='{{item.url}}'>
+<view class="mlist" wx:for="{{mlist}}" wx:key="id" bindtap='back' data-url='{{item.url}}'>
   <text>{{item.txt}}</text>
   <image src="../../image/Back.png"></image>
 </view>
