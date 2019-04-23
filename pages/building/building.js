@@ -4,7 +4,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    aaa:"测试",
     winWidth: 0,
     winHeight: 0,
     state: false,// 显示隐藏
@@ -62,50 +61,22 @@ Page({
       imgs:"",
       name: "中岳俪景湾", 
       state:"在售",
-      address:[{as:"住宅",bs:"管城回族区", cs:"管南区域"}],
-      features:[{ad:"小户型",bd:"车位充足", cd:"绿化率高"}],
+      address: ["住宅", "管城回族区", "管南区域"],
+      features:["小户型","车位充足","绿化率高"],
       ak:"14000元/㎡",
       bk:"建面73-124㎡"
     },{
       name: "美盛象湖100",
       state: "待售",
-      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
-      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+        address: ["住宅", "惠济","邙山"],
+      features: ["小户型", "车位充足", "绿化率高"],
       ak: "14500元/平",
       bk: "建面137-215㎡"
     },{
       name: "美盛象湖101",
-        state: "售罄",
-      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
-      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
-      ak: "14500元/平",
-      bk: "建面137-215㎡"
-    }, {
-      name: "美盛象湖102",
-      state: "待售",
-      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
-      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
-      ak: "14500元/平",
-      bk: "建面137-215㎡"
-    }, {
-      name: "美盛象湖103",
-      state: "待售",
-      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
-      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
-      ak: "14500元/平",
-      bk: "建面137-215㎡"
-    }, {
-      name: "美盛象湖104",
-      state: "待售",
-      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
-      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
-      ak: "14500元/平",
-      bk: "建面137-215㎡"
-    }, {
-      name: "美盛象湖105",
-      state: "待售",
-      address: [{ as: "住宅", bs: "管城回族区", cs: "管南区域" }],
-      features: [{ ad: "小户型", bd: "车位充足", cd: "绿化率高" }],
+      state: "售罄",
+        address: ["商业类 ", "郑东新区", "白沙"],
+      features: ["小户型", "车位充足", "绿化率高"],
       ak: "14500元/平",
       bk: "建面137-215㎡"
     }]
@@ -114,9 +85,11 @@ Page({
   catchTouchMove: function (res) {
     return false
   },
+  /**
+   * 搜索
+   */
   SearchConfirm(){
     this.setData({
-      aaa:"通过",
       state: false
     })
   },
@@ -130,7 +103,7 @@ Page({
   /** 
    * 点击tab切换 
    */
-  swichNav: function (e) {
+  swichNav: function (e){
     var _this = this;
     this.setData({ state: true })
     if (this.data.currentTab === e.target.dataset.current) {
@@ -160,7 +133,7 @@ Page({
       }
     }
   },
-  checkboxChange1: function (e) {
+  checkboxChange1: function (e) {//区域
     var arr1 = this.data.arr1;
     var checkArr = e.detail.value;
     this.color(checkArr,arr1);
@@ -168,9 +141,9 @@ Page({
       address: checkArr,
       arr1: arr1
     })
-    console.log(checkArr);//选择区域
+    console.log(checkArr);
   },
-  checkboxChange2: function (e) {
+  checkboxChange2: function (e) {//价格
     var arr2 = this.data.arr2;
     var checkArr = e.detail.value;
     this.color(checkArr,arr2);
@@ -179,7 +152,7 @@ Page({
       arr2: arr2
     })
   },
-  checkboxChange3: function (e) {
+  checkboxChange3: function (e) {//户型
     var arr3 = this.data.arr3;
     var checkArr = e.detail.value;
     this.color(checkArr,arr3);
@@ -277,7 +250,6 @@ Page({
   },
   obtain() {
     var sk1 = [], sk2 = [], sk3 = [], sk4 = [];
-    console.log(this.data.allGoodsFilte);
     var akk1 = this.data.allGoodsFilte;
     var akk2 = this.data.typek;
     var akk3 = this.data.features;
@@ -396,15 +368,6 @@ Page({
     })
     this.obtain();
     this.passk();
-  },
-  /**
-   * 点击其他区域，弹窗消失
-   */
-  toggleDialog() {
-    this.setData({
-      state:false
-    });
-
   },
   /**
    * 生命周期函数--监听页面加载

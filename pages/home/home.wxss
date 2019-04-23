@@ -7,6 +7,7 @@
   background:rgba(250, 234, 234, 0.5);
 }
 .mun{
+  box-sizing:border-box;
 	height: 140rpx;
 	background-color:rgba(33,27,29,0.9);
   display: flex;
@@ -67,11 +68,11 @@
 /* 滚动通知 */
 .swiper_container {
   height: 55rpx;
-  width: 80vw;
+  width:100%;
 }
 .swiper_item {
   font-size: 24rpx;
-  margin-left:48rpx;
+  margin-left:25rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -285,8 +286,8 @@
 }
 /* 咨询 */
 .consulting{
-	width: 100rpx;
-	height: 100rpx;
+	width: 150rpx;
+	height: 150rpx;
   position:fixed;
   right:40rpx;
   bottom:210rpx;

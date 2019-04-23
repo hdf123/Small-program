@@ -75,11 +75,14 @@ Page {
   z-index:1;
   overflow: hidden; 
 } 
+.last{
+  background:white;
+}
 .scrollk{
   height:400rpx;
 } 
 .scrollks{
-  height:600rpx;
+  height:70%;
   background:white;
   padding-bottom:50rpx;
 }
@@ -210,7 +213,7 @@ checkbox-group{
   width: 190rpx;
 	height: 144rpx;
   border-radius: 4rpx;
-  background: rgba(177, 164, 164, 0.1);
+  background: rgba(241, 193, 193, 0.1);
 }
 .buildings{
   width:436rpx;

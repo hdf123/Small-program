@@ -71,12 +71,18 @@
 .btn{
   width: 618rpx;
 	height: 90rpx;
-  background-color: #d8b87b;
 	border-radius: 4rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-size: 30rpx;
   margin:60rpx auto 0;
+  font-size: 30rpx;
+}
+.btk{
+  color: #ffffff;
+  background-color: #d8b87b;
+}
+.bts{
+  color:#FCFCFC;
+  background-color: #dbdbdb;
 }

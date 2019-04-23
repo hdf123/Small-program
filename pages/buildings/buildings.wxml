@@ -18,6 +18,9 @@
   </view>
   <view class="details_features">
     <view class="statea">在售</view>
+    <!-- <view class="{{item.state=='在售'?'statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
+    <view class="{{item.state=='待售'?'stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
+    <view class="{{item.state=='售罄'?'statec':''}}" wx:else>{{item.state}}</view> -->
     <view>综合体</view>
     <view>低密住所</view>
     <view>投资地产</view>
@@ -46,7 +49,7 @@
   <view class="showks">
     <view>
       <text>地址:</text>
-      <text>中原郑州市中原路与西三环交汇处…</text>
+      <text class="address">中原郑州市中原路与西三环交汇处中原郑州市中原路与西三环交汇处…</text>
     </view>
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
@@ -66,8 +69,10 @@
     </block>
   </swiper>
 </view>
+
+
 <!-- 户型 -->
-<navigator class="door doors" url="../model/model">
+<navigator class="door doors" url="../model/model?name={{names}}&arr={{arrs}}">
   <text>户型介绍(5)</text>
   <view>
     <text class="aas">全部户型</text>
@@ -75,44 +80,34 @@
   </view>
 </navigator>
 
+
 <!-- 户型展示 -->
 <view class="door_box">
-  <view class="door_child">
-    <view class="door_image">
-      <image src='' mode='widthFix' />
-    </view>
-    <view>
-      <view class="pattern">
-        <view>3室2厅2卫</view>
-        <view class="door_state">在售</view>
+  <block wx:for="{{door}}" wx:key="id">
+    <navigator class="door_child" url="../preview/preview?name={{item.names}}&arr={{item.area}}">
+      <view class="door_image">
+        <image src='{{item.url}}' mode='widthFix' />
       </view>
-      <view class="direction">
-        <view>建面:</view>
-        <view>117.4㎡</view>
-        <view>朝向南</view>
+      <view>
+        <view class="pattern">
+          <view>{{item.name}}</view>
+          <!-- <view class="door_state" wx:if="{{item.state=='在售'}}">{{item.state}}</view> -->
+          <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
+          <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
+          <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
+        </view>
+        <view class="direction">
+          <block wx:for="{{item.area}}" wx:key="id">
+            <view>{{item}}</view>
+          </block>
+        </view>
+        <text class="waiting">{{item.many}}</text>
       </view>
-      <text class="waiting">价格待定</text>
-    </view>
-  </view>
-
-  <view class="door_child">
-    <view class="door_image">
-      <image src='' mode='widthFix' />
-    </view>
-    <view>
-      <view class="pattern">
-        <view>3室2厅2卫</view>
-        <view class="door_state">在售</view>
-      </view>
-      <view class="direction">
-        <view>建面:</view>
-        <view>117.4㎡</view>
-        <view>朝向南</view>
-      </view>
-      <text class="waiting">价格待定</text>
-    </view>
-  </view>
+    </navigator>
+  </block>
 </view>
+
+
 <!-- 位置周边 -->
 <view class="surrounding">位置周边</view>
 <view class="page-section page-section-gap">
@@ -130,6 +125,7 @@
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
 </navigator>
+
 <view class="review_box">
   <view wx:for="{{arr}}" wx:key="id">
     <view class="review_object">
@@ -151,7 +147,8 @@
       </view>
     </view>
     <view class="recontent">
-      {{item.evaluation}}。
+      {{item.evaluation}}
+      <!-- 判断是否有添加图片 -->
       <view class="reimgs" wx:if="{{item.picture.length>0}}">
         <block wx:for="{{item.picture}}" wx:key="id">
           <image src='{{item}}' mode='widthFix' />
@@ -166,7 +163,7 @@
 
 <!-- 推荐 -->
 <view class="recommend">周边推荐</view>
-<swiper class="swiper2" bindchange="swiperChange" display-multiple-items="2.07" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+<swiper class="swiper2" bindchange="swiperChange" previous-margin="30rpx" display-multiple-items="2.1">
   <swiper-item>
     <view class="swi_box">
       <image src='' mode='widthFix' />
@@ -193,7 +190,7 @@
   </swiper-item>
 </swiper>
 <view class="recommend project">专题推荐</view>
-<swiper class="swiper3" bindchange="swiperChange" display-multiple-items="2.07" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+<swiper class="swiper3" bindchange="swiperChange" previous-margin="30rpx" display-multiple-items="2.1">
   <swiper-item>
     <view class="swi_box">
       <image src='' mode='widthFix' />

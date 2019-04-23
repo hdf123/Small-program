@@ -1,16 +1,15 @@
 {
   "pages":[
+    
+    "pages/building/building",
     "pages/model/model",
     "pages/preview/preview",
     "pages/all/all",
-    "pages/buildings/buildings",
-    "pages/building/building",
     "pages/home/home",
     "pages/my/my",
-    
+    "pages/buildings/buildings",
     "pages/comments/comments",
     "pages/information/information",
-    
     "pages/review/review",
     "pages/BuyNow/BuyNow",
     "pages/buy/buy",
@@ -23,6 +22,7 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "selectedColor": "#d8b87b",
     "list": [
       {
         "pagePath": "pages/home/home",

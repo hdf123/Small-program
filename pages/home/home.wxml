@@ -66,19 +66,19 @@
     </view>
     <view class="process_box">
       <view>
-        <image src='../../image/图1@2x.png' mode='widthFix' />
+        <image src='../../image/a_first1.png' mode='widthFix' />
         <view>
           <text>1.联系客服办理返金卡</text>
         </view>
       </view>
       <view>
-        <image src='../../image/图2@2x.png' mode='widthFix' />
+        <image src='../../image/a_second2.png' mode='widthFix' />
         <view>
           <text>2.预约看房</text>
         </view>
       </view>
       <view>
-        <image src='../../image/图3@2x.png' mode='widthFix' />
+        <image src='../../image/a_third3.png' mode='widthFix' />
         <view>
           <text>3.确定房源</text>
         </view>
@@ -86,19 +86,19 @@
     </view>
     <view class="process_box">
       <view>
-        <image src='../../image/图4@2x.png' mode='widthFix' />
+        <image src='../../image/a_fourth4.png' mode='widthFix' />
         <view>
           <text>4.提供购房信息</text>
         </view>
       </view>
       <view>
-        <image src='../../image/图5@2x.png' mode='widthFix' />
+        <image src='../../image/a_fifth5.png' mode='widthFix' />
         <view>
           <text>5.获取额外优惠</text>
         </view>
       </view>
       <view>
-        <image src='../../image/图6@2x.png' mode='widthFix' />
+        <image src='../../image/a_sixth6.png' mode='widthFix' />
         <view>
           <text>6.办理购房合同</text>
         </view>
@@ -211,4 +211,4 @@
   </view>
 </view>
 <!-- 咨询按钮 -->
-<image src='../../image/call center @2x.png' class="consulting" mode='widthFix' />
+<image src='../../image/ask.png' class="consulting" mode='widthFix' />

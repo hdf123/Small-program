@@ -4,6 +4,7 @@ Page({
    */
   data: {
     texts: "",
+    state:0,//是否有文字和图片，不能全部为空
     max: 200, //最多字数 (根据自己需求改变)
     tempFilePaths: []
   },
@@ -19,8 +20,9 @@ Page({
     if (len > this.data.max) return;
     // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
     this.setData({
-      currentWordNumber: len //当前字数  
+      currentWordNumber: len, //当前字数 
     });
+    this.judge(len);
   },
   /**
    * 上传图片方法
@@ -36,47 +38,16 @@ Page({
           title: '正在上传...',
           icon: 'loading',
           mask: true,
-          duration: 1000
+          duration: 1000,
+          state: 1
         })
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         let tempFilePaths = res.tempFilePaths;
-
         _this.setData({
           tempFilePaths: tempFilePaths
         })
-        console.log(this.data.tempFilePaths);
-        /**
-         * 上传完成后把文件上传到服务器
-         */
-        var count = 0;
-        for (var i = 0, h = tempFilePaths.length; i < h; i++) {
-          //上传文件
-          /*  wx.uploadFile({
-              url: HOST + '地址路径',
-              filePath: tempFilePaths[i],
-              name: 'uploadfile_ant',
-              header: {
-                "Content-Type": "multipart/form-data"
-              },
-              success: function (res) {
-                count++;
-                //如果是最后一张,则隐藏等待中  
-                if (count == tempFilePaths.length) {
-                  wx.hideToast();
-                }
-              },
-              fail: function (res) {
-                wx.hideToast();
-                wx.showModal({
-                  title: '错误提示',
-                  content: '上传图片失败',
-                  showCancel: false,
-                  success: function (res) { }
-                })
-              }
-            });*/
-        }
-
+        var woke = tempFilePaths.length;
+        _this.judge(woke);
       }
     })
   },
@@ -102,7 +73,17 @@ Page({
     })
   },
   /**
-   * 长按删除图片
+   *判断有木有文字或图片内容
+   */
+  judge: function (woke){
+    if (woke>= 1) {
+      this.setData({ state: 1 });
+    } else if (woke< 1) {
+      this.setData({ state: 0 });
+    }
+  },
+  /**
+   * 删除图片
    */
   deleteImage: function (e) {
     var _this = this;
@@ -115,6 +96,12 @@ Page({
         if (res.confirm) {
           console.log('点击确定了');
           tempFilePaths.splice(index, 1);
+
+          var woke = tempFilePaths.length;
+          _this.judge(woke);
+
+
+
         } else if (res.cancel) {
           console.log('点击取消了');
           return false;
@@ -122,8 +109,24 @@ Page({
         _this.setData({
           tempFilePaths
         });
+
       }
     })
+  },
+  /**
+   * 提交
+   */
+  btn(){
+    if(this.data.state==0){
+      wx.showToast({
+        title: '上传个锤子啊...',
+        icon: 'loading',
+        mask: true,
+        duration: 1000,
+        state: 1
+      })
+      return ;
+    }
   },
   /**
    * 生命周期函数--监听页面加载

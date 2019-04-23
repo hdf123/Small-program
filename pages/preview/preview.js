@@ -17,21 +17,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("name:" + options.name);
+    console.log("arr："+options.arr);
     var _this=this;
-    console.log("arrs:" + options.arrs);
-    console.log("地址栏："+options.urlk);
-    wx:wx.setNavigationBarTitle({
+    var arr = options.arr.split(",");
+    console.log(arr);
+    wx.setNavigationBarTitle({
       title: '户型图'
     })
-
-    wx.getStorage({//从本地缓存中异步获取指定 key 对应的内容。
-      key: '本地缓存',
-      success: function (res) {
-        console.log(res.data);
-      }
+    this.setData({
+      arr:arr
     })
-
-
     /** 
      * 获取系统信息 
      */

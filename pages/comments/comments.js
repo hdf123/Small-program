@@ -43,7 +43,7 @@ Page({
           message[i].praise = parseInt(message[i].praise) - 1
         }
         wx.showToast({
-          title: collectStatus ? '收藏成功' : '取消收藏',
+          title: collectStatus ? '点赞成功' : '取消点赞',
         })
       }
     }

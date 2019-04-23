@@ -3,7 +3,7 @@
   <view>
     <icon class="search_icon" type="search" size="14"></icon>
   </view>
-  <input type="text" class="search_input" placeholder="输入楼盘名/区域" value="{{aaa}}" bindinput='SearchInput' bindconfirm="SearchConfirm" />
+  <input type="text" class="search_input" placeholder="输入楼盘名/区域" value="" bindinput='SearchInput' bindconfirm="SearchConfirm" />
 </view>
 
 
@@ -66,7 +66,7 @@
         <button data-three="{{three}}" bindtap='btn3'>确定</button> 
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove'>  
+    <swiper-item catchtouchmove='catchTouchMove' class="last">  
       <scroll-view class="scrollks" scroll-y="true">
         <!-- 面积 -->
         <view class="screening_box">
@@ -155,11 +155,9 @@
   </view>
 </view>
 <!-- 楼盘 -->
-
-
-<scroll-view style="height:{{winHeight-110}}px" scroll-y="{{isScroll}}">
+<scroll-view style="height:{{winHeight-110}}px;" scroll-y="true">
   <block wx:for="{{arrp}}" wx:key="id">
-    <navigator url='../buildings/buildings?id={{item.name}}'>
+    <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}'>
       <view class="building_box">
         <image class="images" src='' mode='widthFix' />
         <view class="buildings">
@@ -169,15 +167,15 @@
             <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
             <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
           </view>
-          <view class="building_address" wx:for="{{item.address}}" wx:for-item="keys" wx:key="id">
-            <view>{{keys.as}}</view>
-            <view>{{keys.bs}}</view>
-            <view>{{keys.cs}}</view>
+          <view class="building_address">
+            <block wx:for="{{item.address}}" wx:for-item="keys" wx:key="id">
+              <view>{{keys}}</view>
+            </block>
           </view>
-          <view class="building_features" wx:for="{{item.features}}" wx:for-item="keyg" wx:key="id">
-            <view>{{keyg.ad}}</view>
-            <view>{{keyg.bd}}</view>
-            <view>{{keyg.cd}}</view>
+          <view class="building_features">
+            <block wx:for="{{item.features}}" wx:for-item="keyg" wx:key="id">
+              <view>{{keyg}}</view>
+            </block>
           </view>
           <view class="building_area">
             <view>{{item.ak}}</view>
@@ -188,33 +186,3 @@
     </navigator>
   </block>
 </scroll-view>
-
-<!-- <block wx:for="{{arrp}}" wx:key="id">
-  <navigator url='../buildings/buildings?id={{item.name}}'>
-    <view class="building_box">
-      <image class="images" src='' mode='widthFix' />
-      <view class="buildings">
-        <view class="building_state">
-          <view>{{item.name}}</view>
-          <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
-          <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
-          <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
-        </view>
-        <view class="building_address" wx:for="{{item.address}}" wx:for-item="keys" wx:key="id">
-          <view>{{keys.as}}</view>
-          <view>{{keys.bs}}</view>
-          <view>{{keys.cs}}</view>
-        </view>
-        <view class="building_features" wx:for="{{item.features}}" wx:for-item="keyg" wx:key="id">
-          <view>{{keyg.ad}}</view>
-          <view>{{keyg.bd}}</view>
-          <view>{{keyg.cd}}</view>
-        </view>
-        <view class="building_area">
-          <view>{{item.ak}}</view>
-          <view>{{item.bk}}</view>
-        </view>
-      </view>
-    </view>
-  </navigator>
-</block> -->

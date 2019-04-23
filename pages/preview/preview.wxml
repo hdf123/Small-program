@@ -4,10 +4,9 @@
 <view class="instructions">
   <view>
     <view class="conditions">
-      <view>4室2厅2卫</view>
-      <view>建面184㎡</view>
-      <view>朝南</view>
-      <view>在售</view>
+      <block wx:for="{{arr}}" wx:key="id">
+        <view>{{item}}</view>
+      </block>
     </view>
     <view class="muns">约490万/套</view>
   </view>
