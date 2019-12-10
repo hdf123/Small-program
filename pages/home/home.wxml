@@ -1,6 +1,7 @@
 <view class="banner">
   <image src='' mode='widthFix' />
 </view>
+
 <view class="mun">
   <text>已有</text>
   <view>
@@ -30,6 +31,8 @@
       </view>
     </view>
     <text class="prompt">*购买成功后，中原楼市客服将在24小时内联系您</text>
+
+
     <view class="reports">
       <image src='../../image/information@2x.png' mode='widthFix' />
       <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
@@ -40,6 +43,8 @@
         </block>
       </swiper>
     </view>
+
+
     <button class="btn" formType="submit">我要优惠</button>
     <view class="terms">
       <image src='{{img}}' class="terms_show" bindtap='terms' mode='widthFix' />
