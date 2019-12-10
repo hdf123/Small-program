@@ -13,6 +13,7 @@
 </view>
 
 <!-- 个人信息 -->
+
 <view class="home_box">
   <form bindsubmit="formSubmit">
     <view class="information">
