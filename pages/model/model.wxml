@@ -10,7 +10,7 @@
     <swiper-item scroll-y="true">
       <scroll-view style="height:{{winHeight-50}}px;" scroll-y="true">
 
-        <navigator class="pattern_box" wx:for="{{arr1}}" wx:key="id" url="../preview/preview?name={{names}}&arr={{arrs}}" data-name="{{names}}" data-arrs="{{arrs}}">
+        <navigator class="pattern_box" wx:for="{{arr1}}" wx:key="id" url="../preview/preview?arr={{item.area}}&muns={{item.many}}" data-name="{{names}}" data-arrs="{{arrs}}">
           <view>
             <image src='{{item.url}}' mode='widthFix' />
           </view>

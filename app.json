@@ -1,25 +1,24 @@
 {
-  "pages":[
-    
+  "pages": [
+    "pages/home/home",
     "pages/building/building",
+    "pages/my/my",
     "pages/model/model",
     "pages/preview/preview",
     "pages/all/all",
-    "pages/home/home",
-    "pages/my/my",
     "pages/buildings/buildings",
     "pages/comments/comments",
     "pages/information/information",
     "pages/review/review",
-    "pages/BuyNow/BuyNow",
     "pages/buy/buy",
+    "pages/BuyNow/BuyNow",
     "pages/instructions/instructions"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "中原楼市返金卡",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#d8b87b",
@@ -43,5 +42,6 @@
         "selectedIconPath": "image/my_selected@2x.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

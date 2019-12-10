@@ -8,7 +8,7 @@
         <view>{{item}}</view>
       </block>
     </view>
-    <view class="muns">约490万/套</view>
+    <view class="muns">{{muns}}</view>
   </view>
   <view class="btn" bindtap='btn'>查看全部</view>
 </view>

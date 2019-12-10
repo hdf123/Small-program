@@ -157,7 +157,7 @@
 <!-- 楼盘 -->
 <scroll-view style="height:{{winHeight-110}}px;" scroll-y="true">
   <block wx:for="{{arrp}}" wx:key="id">
-    <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}'>
+    <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}&state={{item.state}}&ars={{item.features}}'>
       <view class="building_box">
         <image class="images" src='' mode='widthFix' />
         <view class="buildings">

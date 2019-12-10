@@ -126,11 +126,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("name:" + options.name);
-    console.log("arr：" + options.arr);
+    var arr = options.arr.split(",");
+    var ars = options.ars.split(",");
     this.setData({
       names: options.name,
-      arrs: options.arr
+      arrs:arr,
+      ars: ars,
+      state: options.state
     })
   },
   /**

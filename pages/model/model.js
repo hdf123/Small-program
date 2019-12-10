@@ -21,7 +21,7 @@ Page({
       url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/37dfdc929ee9a4313facb0b23ebcd721.jpg?thumb=1&w=720&h=360',
       name: "6室3厅2卫",
       state: "待售",
-      area: ["建面117.4㎡", "朝向南"],
+      area: ["建面115.4㎡", "朝向南"],
       features: ["全名格局","阳台","户型方正"],
       many: "约272万/套"
     }, {

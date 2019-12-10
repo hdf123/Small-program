@@ -17,16 +17,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("name:" + options.name);
+    console.log("muns:" + options.muns);
     console.log("arr："+options.arr);
     var _this=this;
     var arr = options.arr.split(",");
-    console.log(arr);
     wx.setNavigationBarTitle({
       title: '户型图'
     })
     this.setData({
-      arr:arr
+      arr:arr,
+      muns: options.muns
     })
     /** 
      * 获取系统信息 

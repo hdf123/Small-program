@@ -10,20 +10,19 @@
 </view>
 <!-- 资料 -->
 <view class="details_box">
-  <view>阳光城丽景公馆</view>
+  <view>{{names}}</view>
   <view class="details_address">
-    <view>近地铁</view>
-    <view>近主干道</view>
-    <view>低总价</view>
+    <block wx:for="{{arrs}}" wx:key="id">
+      <view>{{item}}</view>
+    </block>
   </view>
   <view class="details_features">
-    <view class="statea">在售</view>
-    <!-- <view class="{{item.state=='在售'?'statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
-    <view class="{{item.state=='待售'?'stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
-    <view class="{{item.state=='售罄'?'statec':''}}" wx:else>{{item.state}}</view> -->
-    <view>综合体</view>
-    <view>低密住所</view>
-    <view>投资地产</view>
+    <view class="stk {{state=='在售'?'statea':''}}" wx:if="{{state=='在售'}}">{{state}}</view>
+    <view class="stk {{state=='待售'?'stateb':''}}" wx:elif="{{state=='待售'}}">{{state}}</view>
+    <view class="stk {{state=='售罄'?'statec':''}}" wx:else>{{state}}</view>
+    <block wx:for="{{ars}}" wx:key="id">
+      <view class="stk">{{item}}</view>
+    </block>
   </view>
   <view class="introduce_box">
     <view>
@@ -84,14 +83,13 @@
 <!-- 户型展示 -->
 <view class="door_box">
   <block wx:for="{{door}}" wx:key="id">
-    <navigator class="door_child" url="../preview/preview?name={{item.names}}&arr={{item.area}}">
+    <navigator class="door_child" url="../preview/preview?arr={{item.area}}&muns={{item.many}}">
       <view class="door_image">
         <image src='{{item.url}}' mode='widthFix' />
       </view>
       <view>
         <view class="pattern">
           <view>{{item.name}}</view>
-          <!-- <view class="door_state" wx:if="{{item.state=='在售'}}">{{item.state}}</view> -->
           <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
           <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
           <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
