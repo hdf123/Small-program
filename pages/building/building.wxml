@@ -23,25 +23,25 @@
         筛选<view class="triangle {{currentTab==3 ? 'triangles' : ''}}"></view>
       </view>  
   </view>
-
+  
 
   <!-- 显示 -->
-  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange" wx:if="{{state}}" catchtouchmove="true">
-    <swiper-item catchtouchmove='catchTouchMove'> 
-      <scroll-view class="scrollk" scroll-y="true">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange" wx:if="{{state}}" catchtouchmove="true" bindtap='btn'>
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <scroll-view class="scrollk" scroll-y="true" catchtap="btns">
         <checkbox-group bindchange="checkboxChange1">
           <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr1}}" wx:key="id" bindtap='{{index==0?"limit1":""}}'>
             {{item.value}}
-          <checkbox value="{{index}}" class="{{index==0?'hiddens':''}}" checked="{{item.checked}}"/>
+            <checkbox value="{{index}}" class="{{index==0?'hiddens':''}}" checked="{{item.checked}}"/>
           </label>
         </checkbox-group>
       </scroll-view>
       <view class="btn">
-        <button data-one="{{one}}" bindtap='btn1'>确定</button>
+        <button data-one="{{one}}" catchtap='btn1'>确定</button>
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove'> 
-      <scroll-view class="scrollk" scroll-y="true">
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <scroll-view class="scrollk" scroll-y="true" catchtap="btns">
         <checkbox-group bindchange="checkboxChange2">
           <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr2}}" wx:key="id" bindtap='{{index==0?"limit2":""}}'>
             {{item.value}}
@@ -53,8 +53,8 @@
         <button data-two="{{two}}" bindtap='btn2'>确定</button> 
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove'> 
-      <scroll-view class="scrollk" scroll-y="true">
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <scroll-view class="scrollk" scroll-y="true" catchtap="btns">
         <checkbox-group bindchange="checkboxChange3">
           <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr3}}" wx:key="id" bindtap='{{index==0?"limit3":""}}'>
             {{item.value}}
@@ -66,8 +66,8 @@
         <button data-three="{{three}}" bindtap='btn3'>确定</button> 
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove' class="last">  
-      <scroll-view class="scrollks" scroll-y="true">
+    <swiper-item catchtouchmove='catchTouchMove' class="last">
+      <scroll-view class="scrollks" scroll-y="true" catchtap="btns">
         <!-- 面积 -->
         <view class="screening_box">
           <view class="screening">面积 (㎡)</view>

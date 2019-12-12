@@ -9,7 +9,6 @@ Page({
     state: false,// 显示隐藏
     currentTab: 99,// tab切换  
     statek: false,//预留字段
-    sk:[],
     address:'',//区域
     price:'',//价格
     door:'',//户型
@@ -273,7 +272,7 @@ Page({
       }
     }
   },
-  obtain() {
+  obtain() {//获取结果
     var sk1 = [], sk2 = [], sk3 = [], sk4 = [];
     var akk1 = this.data.allGoodsFilte;
     var akk2 = this.data.typek;
@@ -296,6 +295,15 @@ Page({
     console.log("类型：" + this.data.property);
     console.log("特色：" + this.data.featuresk);
     console.log("状态：" + this.data.SalesStatus);
+  },
+  btn() {
+    console.log(1);
+    this.setData({
+      state: false
+    })
+  },
+  btns() {
+    console.log(2);
   },
   btn1() {
     this.obtain();
@@ -323,10 +331,10 @@ Page({
   },
   // 清空
   empty() {
-    var allGoodsFilte = this.data.allGoodsFilte;
-    var typek = this.data.typek;
-    var features = this.data.features;
-    var selling = this.data.selling;
+    var allGoodsFilte = this.data.allGoodsFilte;//面积
+    var typek = this.data.typek;//物业类型
+    var features = this.data.features;//楼盘特色
+    var selling = this.data.selling;//售卖状态
 
     this.func(allGoodsFilte);
     this.func(typek);
