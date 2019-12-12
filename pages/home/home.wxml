@@ -13,7 +13,6 @@
 </view>
 
 <!-- 个人信息 -->
-
 <view class="home_box">
   <form bindsubmit="formSubmit">
     <view class="information">
@@ -215,5 +214,6 @@
     </view>
   </view>
 </view>
+
 <!-- 咨询按钮 -->
 <image src='../../image/ask.png' class="consulting" mode='widthFix' />

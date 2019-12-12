@@ -155,14 +155,15 @@
   </view>
 </view>
 <!-- 楼盘 -->
-<scroll-view style="height:{{winHeight-110}}px;" scroll-y="true">
+<!-- <  style="height:{{winHeight-110}}px;" scroll-y="true"> -->
+<scroll-view class="scrollk" scroll-y="true" style="height:{{winHeight-110}}px;" bindscrolltolower="bindDownLoad">
   <block wx:for="{{arrp}}" wx:key="id">
     <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}&state={{item.state}}&ars={{item.features}}'>
       <view class="building_box">
         <image class="images" src='' mode='widthFix' />
         <view class="buildings">
           <view class="building_state">
-            <view>{{item.name}}</view>
+            <view>{{(index+1)+item.name}}</view>
             <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
             <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
             <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>

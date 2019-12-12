@@ -17,6 +17,8 @@ Page({
     property:'',//物业类型
     featuresk:'',//楼盘特色
     SalesStatus:'',//销售状态
+    trus: true,//加载状态
+    nums:0,
     arr1: [{ value: '不限',checked: true}, { value: '金水区' }, { value: '二七区' }, { value: '中原区' },
       { value: '郑东新区' }, { value: '管城区' }, { value: '惠济区' }
     ],
@@ -68,17 +70,40 @@ Page({
     },{
       name: "美盛象湖100",
       state: "待售",
-        address: ["住宅", "惠济","邙山"],
+      address: ["住宅", "惠济","邙山"],
       features: ["小户型", "车位充足", "绿化率高"],
       ak: "14500元/平",
       bk: "建面137-215㎡"
     },{
       name: "美盛象湖101",
       state: "售罄",
-        address: ["商业类 ", "郑东新区", "白沙"],
+      address: ["商业类 ", "郑东新区", "白沙"],
       features: ["小户型", "车位充足", "绿化率高"],
       ak: "14500元/平",
       bk: "建面137-215㎡"
+    }, {
+        name: "美盛象湖102",
+        state: "售罄",
+        address: ["商业类 ", "郑东新区", "白沙"],
+        features: ["小户型", "车位充足", "绿化率高"],
+        ak: "14500元/平",
+        bk: "建面137-215㎡"
+    }, {
+        name: "美盛象湖103",
+        state: "售罄",
+        address: ["商业类 ", "郑东新区", "白沙"],
+        features: ["小户型", "车位充足", "绿化率高"],
+        ak: "14500元/平",
+        bk: "建面137-215㎡"
+    }],
+    arrk:[{
+      imgs: "",
+      name: "中岳俪景湾",
+      state: "在售",
+      address: ["住宅", "管城回族区", "管南区域"],
+      features: ["小户型", "车位充足", "绿化率高"],
+      ak: "14000元/㎡",
+      bk: "建面73-124㎡"
     }]
   },
   // 截获手动滑动
@@ -368,6 +393,30 @@ Page({
     })
     this.obtain();
     this.passk();
+  },
+  bindDownLoad: function () {
+    console.log(2);
+    var _this = this;
+    console.log(_this.data.trus);
+
+    if (_this.data.trus) {
+      _this.popMaskTest();
+      _this.setData({ trus: false });
+      setTimeout(function () {
+        _this.setData({
+          arrp: _this.data.arrp.concat(_this.data.arrk),
+          trus: true,
+        });
+      }, 2000);
+    }
+  },
+  popMaskTest: function () {
+    wx.showToast({
+      title: '加载中...',
+      duration: 2000,
+      mask: true    //是否有透明蒙层，默认为false 
+      //如果有透明蒙层，弹窗的期间不能点击文档内容 
+    })
   },
   /**
    * 生命周期函数--监听页面加载

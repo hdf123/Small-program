@@ -53,6 +53,7 @@
   color:#999999;
   font-size:20rpx;
 }
+/* 滚动通知 */
 .reports{
 	height: 60rpx;
   padding:0 16rpx;
@@ -65,7 +66,6 @@
   width: 29rpx;
 	height: 23rpx;
 }
-/* 滚动通知 */
 .swiper_container {
   height: 55rpx;
   width:100%;
